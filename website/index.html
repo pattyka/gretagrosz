@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Greta Grosz</title>
+<meta name="description" content="Greta Grosz — business and finance student in Austria with roots in the UK and Hungary. Finance work, apps and her own small business." />
+<meta property="og:title" content="Greta Grosz" />
+<meta property="og:description" content="Business and finance student in Austria with roots in the UK and Hungary. Building apps and exploring business ventures." />
+<meta property="og:url" content="https://gretagrosz.com/" />
+<meta name="theme-color" content="#F4F6F9" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+<link rel="apple-touch-icon" href="/img/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/site.css" />
+<script>
+  // Hide the page for a moment if it will be shown in German, so English doesn't flash first
+  try { var lang = localStorage.getItem('lang') } catch (e) {}
+  if (lang === 'de' || (lang !== 'en' && (navigator.languages || [navigator.language]).some(function (l) { return /^de\b/i.test(l) }))) document.documentElement.classList.add('i18n-wait')
+</script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
+    <div class="links">
+      <a href="/finance/">Finance</a>
+      <a href="/apps/">Apps</a>
+      <a href="/business/">Business</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16" /></svg>
+    </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="sidebar" id="sidebar" aria-label="Site">
+  <a class="sb-name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
+  <p class="sb-role">Business &amp; finance student (HAK), Austria</p>
+  <p class="sb-status">Looking for a banking internship</p>
+  <nav class="sb-links sb-pages" aria-label="Pages">
+    <a href="/" class="current" aria-current="page">Home</a>
+    <a href="/finance/">Finance work</a>
+    <a href="/apps/">Apps</a>
+    <a href="/business/">Business</a>
+  </nav>
+  <p class="sb-group">On this page</p>
+  <nav class="sb-links sb-sections" aria-label="On this page">
+    <a href="#top" data-section="top">Intro</a>
+    <a href="#about" data-section="about">About</a>
+    <a href="#experience" data-section="experience">Experience</a>
+    <a href="#journey" data-section="journey">My journey</a>
+    <a href="#contact" data-section="contact">Contact</a>
+  </nav>
+  <div class="sb-foot">
+    <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
+    <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="/files/Marktanalyse_Gen_Z_und_oesterreichische_Banken.pdf">Market research (PDF)</a>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-inner" id="hero">
+      <div>
+        <h1>Greta Grosz</h1>
+        <p class="sub">Business and finance student (HAK) in Austria.</p>
+      </div>
+        <div class="doors hero-doors">
+          <a class="door" href="/finance/">
+            <div>
+              <div class="mini-stat"><strong>83%</strong><span>of young Austrians bank traditionally</span></div>
+              <div class="mini-chart" aria-hidden="true"><i style="--w: 92%"></i><i style="--w: 78%"></i><i style="--w: 62%"></i></div>
+            </div>
+            <div><b>See my finance work</b><small>Market research · Excel tool</small></div>
+          </a>
+          <a class="door dark" href="/apps/">
+            <div class="mini-icons" aria-hidden="true">
+              <span class="icon i-ten"><img src="/img/icon-ten.png" alt="" /></span><span class="icon i-bw"><img src="/img/icon-bw.png" alt="" /></span><span class="icon i-blank"><img src="/img/icon-blank.png" alt="" /></span><span class="icon i-qed"><img src="/img/icon-qed.png" alt="" /></span>
+            </div>
+            <div><b>See my apps</b><small>4 apps, all live</small></div>
+          </a>
+          <a class="door soft" href="/business/">
+            <div class="mini-icons" aria-hidden="true">
+              <span class="icon i-tattoo"><img src="/img/icon-weekendink.png" alt="" /></span><span class="icon i-cloth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.5a2 2 0 1 1 2 2v1.3L3.6 14.6a1.2 1.2 0 0 0 .7 2.2h15.4a1.2 1.2 0 0 0 .7-2.2L12 8.8"/></svg></span>
+            </div>
+            <div><b>See my business</b><small>Weekend Ink · clothing</small></div>
+          </a>
+        </div>
+    </div>
+  </div>
+</header>
+
+<section class="statement" id="about">
+  <div class="sticky">
+    <div class="wrap">
+      <p class="label">About</p>
+      <p class="words" id="words">I study business and finance, and I learn by doing. I research markets, build tools in Excel, design my own apps and sell my own products. Three countries, three languages.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="section" id="experience" style="background: #F7F8FA">
+  <div class="wrap">
+    <p class="label fade">Experience</p>
+    <h2 class="big fade">Work, projects <span>and programmes.</span></h2>
+    <div class="rows">
+      <div class="xp fade"><p class="when">Virtual</p><div><h3>Forage Virtual Experience Programmes</h3><p>JPMorgan Chase &amp; Co. – Quantitative Research. PNC Bank – Financial Services and banking simulation. Hands-on tasks in financial analysis and banking processes.</p></div></div>
+      <div class="xp fade"><p class="when">2026</p><div><h3>Event sales <span>· Weekend Ink, custom temporary tattoos</span></h3><p>Designing my own temporary tattoos and selling them at events.</p></div></div>
+      <div class="xp fade"><p class="when">Ongoing</p><div><h3>Online sales <span>· Clothing</span></h3><p>Selling self-sewn and selected clothing through an online platform.</p></div></div>
+      <div class="xp fade"><p class="when">Ongoing</p><div><h3>English tutoring</h3><p>Helping classmates with English grammar and vocabulary.</p></div></div>
+      <div class="xp fade"><p class="when">June 2025</p><div><h3>Global Green Group <span>· Research support</span></h3><p>Supporting research and lab work, data entry and documentation.</p></div></div>
+      <div class="xp fade"><p class="when">Summer 2024</p><div><h3>Lipót Bad und Camping <span>· Summer job</span></h3><p>Running the till, selling ice cream and preparing fast food.</p></div></div>
+      <div class="xp fade"><p class="when">Summers</p><div><h3>Volunteering <span>· Children’s summer camp</span></h3><p>One week every summer looking after children, helping with group activities and organising the day.</p></div></div>
+    </div>
+
+    <div class="skills">
+      <div class="panel fade">
+        <h4>Languages</h4>
+        <div class="lang">English <span>Native · C1 Euroexam</span></div>
+        <div class="lang">Hungarian <span>Native</span></div>
+        <div class="lang">German <span>B2</span></div>
+      </div>
+      <div class="panel fade">
+        <h4>Skills</h4>
+        <div class="skilllist"><span>Excel (intermediate)</span><span>Word &amp; PowerPoint</span><span>Accounting basics</span><span>SAP basics</span><span>Data analysis</span><span>AI productivity tools</span></div>
+        <div class="skilllist" style="margin-top: 14px"><span>Analytical thinking</span><span>Structured work</span><span>Teamwork</span><span>Presenting</span><span>Reliability</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="journey" id="journey">
+  <div class="wrap">
+    <h2 class="fade">My journey.</h2>
+    <div class="route" id="route">
+      <svg id="route-svg" aria-hidden="true"></svg>
+      <div class="place">
+        <h3>Born in the U.K.</h3>
+      </div>
+      <div class="place">
+        <p class="when">Age 12</p>
+        <h3>Moved to Hungary.</h3>
+      </div>
+      <div class="place">
+        <p class="when">Age 17</p>
+        <h3>Moved to Austria alone.</h3>
+      </div>
+      <div class="place">
+        <p class="when">Now</p>
+        <h3>Finance student, exploring business ventures.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="fade">Let’s talk.</h2>
+    <p class="fade">I’m looking for a banking internship (Pflichtpraktikum). I’d love to hear from you.</p>
+    <div class="actions fade" id="contact-actions"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Copyright © <span id="year">2026</span> Greta Grosz</span>
+    <span>gretagrosz.com</span>
+  </div>
+</footer>
+
+<script src="/i18n.js"></script>
+<script src="/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Business · Greta Grosz</title>
+<meta name="description" content="Greta Grosz’s own business: Weekend Ink custom temporary tattoos for events, and clothing sold online." />
+<meta property="og:title" content="Business · Greta Grosz" />
+<meta property="og:description" content="Business and finance student in Austria with roots in the UK and Hungary. Building apps and exploring business ventures." />
+<meta property="og:url" content="https://gretagrosz.com/business/" />
+<meta name="theme-color" content="#F4F6F9" />
+<meta name="color-scheme" content="light" />
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+<link rel="apple-touch-icon" href="/img/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/site.css" />
+<script>
+  // Hide the page for a moment if it will be shown in German, so English doesn't flash first
+  try { var lang = localStorage.getItem('lang') } catch (e) {}
+  if (lang === 'de' || (lang !== 'en' && (navigator.languages || [navigator.language]).some(function (l) { return /^de\b/i.test(l) }))) document.documentElement.classList.add('i18n-wait')
+</script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
+    <div class="links">
+      <a href="/finance/">Finance</a>
+      <a href="/apps/">Apps</a>
+      <a href="/business/">Business</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="nav-tools">
+      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
+    <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16" /></svg>
+    </button>
+    </div>
+  </div>
+</nav>
+
+<aside class="sidebar" id="sidebar" aria-label="Site">
+  <a class="sb-name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
+  <p class="sb-role">Business &amp; finance student (HAK), Austria</p>
+  <p class="sb-status">Looking for a banking internship</p>
+  <nav class="sb-links sb-pages" aria-label="Pages">
+    <a href="/">Home</a>
+    <a href="/finance/">Finance work</a>
+    <a href="/apps/">Apps</a>
+    <a href="/business/" class="current" aria-current="page">Business</a>
+  </nav>
+  <p class="sb-group">On this page</p>
+  <nav class="sb-links sb-sections" aria-label="On this page">
+    <a href="#top" data-section="top">Overview</a>
+    <a href="#tattoos" data-section="tattoos">Weekend Ink</a>
+    <a href="#clothing" data-section="clothing">Clothing</a>
+    <a href="#tutoring" data-section="tutoring">Tutoring</a>
+  </nav>
+  <div class="sb-foot">
+    <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
+    <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="/files/Marktanalyse_Gen_Z_und_oesterreichische_Banken.pdf">Market research (PDF)</a>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<header class="page-intro" id="top">
+  <div class="wrap">
+    <h1 class="fade">My business ventures</h1>
+    <p class="fade">Designing and selling my own products: Weekend Ink temporary tattoos for events, and clothing I sell online.</p>
+  </div>
+</header>
+
+<!-- Temporary tattoos -->
+<section class="show" id="tattoos">
+  <div class="wrap">
+    <div class="brand-hero fade"><img src="/img/weekendink-large.png" alt="Weekend Ink logo: a peeling sticker reading Weekend Ink" width="600" height="600" /><b>Weekend Ink</b></div>
+    <h2 class="fade">Tattoos for the weekend. Gone by Monday.</h2>
+    <p class="lead fade">Weekend Ink is my first company, making custom temporary tattoos for festivals, events and teams, so your logo, your name or your own idea gets worn, photographed and shared all day.</p>
+    <div class="actions fade"><a class="button" href="/#contact">Plan your tattoos</a></div>
+    <img class="mascot mascot-coral" src="/img/mascot-coral.png" alt="My little mascot peeking over the edge" width="520" height="335" />
+    <div class="stage tattoo-stage" data-demo="tattoo">
+      <div class="tattoo">
+        <svg viewBox="0 0 200 200" role="img" aria-label="Weekend Ink tattoo: a heart with a banner reading Weekend Ink">
+          <path class="fill" id="t-fill" d="M100 162C52 128 32 86 60 64c18-13 36-4 40 12 4-16 22-25 40-12 28 22 8 64-40 98z" />
+          <path class="ink" id="t-star" d="M100 162C52 128 32 86 60 64c18-13 36-4 40 12 4-16 22-25 40-12 28 22 8 64-40 98z" />
+          <path class="band" id="t-band" d="M26 96h148v30H26z" />
+          <path class="ink" id="t-ring" d="M26 96h148v30H26z M26 104H6l10 12-10 13h20 M174 104h20l-10 12 10 13h-20" />
+          <path class="ink" id="t-wave" d="M44 30l4 10 10 4-10 4-4 10-4-10-10-4 10-4z M156 24l3 7 7 3-7 3-3 7-3-7-7-3 7-3z M162 150l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" />
+          <text class="word" id="t-word" x="100" y="119" text-anchor="middle">Weekend Ink</text>
+        </svg>
+        <div class="backing" id="backing"><span>Peel here</span></div>
+      </div>
+      <div class="uses" id="uses"><span>Festivals</span><span>Events</span><span>Teams</span><span>Your idea</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Clothing -->
+<section class="show" id="clothing">
+  <div class="wrap">
+    <div class="show-head fade"><span class="icon i-cloth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.5a2 2 0 1 1 2 2v1.3L3.6 14.6a1.2 1.2 0 0 0 .7 2.2h15.4a1.2 1.2 0 0 0 .7-2.2L12 8.8"/></svg></span><b>Clothing</b></div>
+    <h2 class="fade">Sewn by me. Sold online.</h2>
+    <p class="lead fade">I sew some pieces myself and pick out others, then sell them online to people who want something one of a kind or a good piece with a second life, which means sewing, choosing, photographing, writing listings and shipping on time.</p>
+    <div class="stage cloth-stage" data-demo="cloth">
+      <div class="garment">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <path class="seam" id="c-shirt" d="M72 30 L42 44 L18 80 L44 94 L56 78 L56 176 L144 176 L144 78 L156 94 L182 80 L158 44 L128 30 C122 46 78 46 72 30 Z" />
+          <path class="stitch" d="M80 37 C90 52 110 52 120 37" />
+          <path class="stitch" d="M62 168 L138 168" />
+          <path class="stitch" d="M47 86 L26 76 M153 86 L174 76" />
+          <path class="band" id="c-band" d="M42 112h116v26H42z" />
+          <path class="ink" id="c-label" d="M42 112h116v26H42z" />
+          <text class="word" id="c-word" x="100" y="131" text-anchor="middle">one of a kind</text>
+          <path class="ink" id="c-spark" d="M20 24l4 10 10 4-10 4-4 10-4-10-10-4 10-4z M184 128l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" />
+        </svg>
+      </div>
+      <div class="listing" id="listing"><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.5a2 2 0 1 1 2 2v1.3L3.6 14.6a1.2 1.2 0 0 0 .7 2.2h15.4a1.2 1.2 0 0 0 .7-2.2L12 8.8"/></svg></span><span><b>Self-sewn top</b><small>One of a kind</small></span><span class="tag" id="listing-tag">Listed</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tutoring" style="padding: 100px 0 0">
+  <div class="wrap">
+    <p class="label fade">Also</p>
+    <div class="rows">
+      <div class="xp fade"><p class="when">Ongoing</p><div><h3>English tutoring</h3><p>Helping classmates with English grammar and vocabulary.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="next-pages">
+  <div class="wrap">
+    <h2 class="fade">More of my work.</h2>
+    <div class="doors two fade">
+          <a class="door" href="/finance/">
+            <div>
+              <div class="mini-stat"><strong>83%</strong><span>of young Austrians bank traditionally</span></div>
+              <div class="mini-chart" aria-hidden="true"><i style="--w: 92%"></i><i style="--w: 78%"></i><i style="--w: 62%"></i></div>
+            </div>
+            <div><b>See my finance work</b><small>Market research · Excel tool</small></div>
+          </a>
+          <a class="door dark" href="/apps/">
+            <div class="mini-icons" aria-hidden="true">
+              <span class="icon i-ten"><img src="/img/icon-ten.png" alt="" /></span><span class="icon i-bw"><img src="/img/icon-bw.png" alt="" /></span><span class="icon i-blank"><img src="/img/icon-blank.png" alt="" /></span><span class="icon i-qed"><img src="/img/icon-qed.png" alt="" /></span>
+            </div>
+            <div><b>See my apps</b><small>4 apps, all live</small></div>
+          </a>
+    </div>
+    <a class="more fade" href="/#contact">Get in touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Copyright © <span id="year">2026</span> Greta Grosz</span>
+    <span>gretagrosz.com</span>
+  </div>
+</footer>
+
+<script src="/i18n.js"></script>
+<script src="/site.js"></script>
+</body>
+</html>

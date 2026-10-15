@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* Theme colours come from theme.js; the page darkens smoothly as your streak grows */
+.app {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 1.5s ease, color 1.5s ease;
+}
+
+/* Text styles (like Apple's) */
+.large-title { font-size: 34px; line-height: 41px; font-weight: 700; letter-spacing: -0.02em; }
+.title2 { font-size: 22px; line-height: 28px; font-weight: 700; letter-spacing: -0.01em; }
+.headline { font-size: 17px; line-height: 22px; font-weight: 600; }
+.body { font-size: 17px; line-height: 22px; }
+.footnote { font-size: 13px; line-height: 18px; color: var(--secondary); }
+.caption { font-size: 12px; line-height: 16px; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.02em; }
+.secondary { color: var(--secondary); }
+
+/* Grouped list, like the Settings app */
+.group { background: var(--card); border-radius: 14px; overflow: hidden; transition: background-color 1.5s ease; }
+.row { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 11px 16px; width: 100%; text-align: left; position: relative; }
+.group > .row + .row::before { content: ''; position: absolute; top: 0; left: 16px; right: 0; height: 0.5px; background: var(--separator); }
+.row:active { background: var(--fill); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 52px; padding: 0 20px; border-radius: 14px; font-size: 17px; font-weight: 600; transition: transform 0.1s, opacity 0.2s; }
+.btn:active { transform: scale(0.97); opacity: 0.85; }
+.btn:disabled { opacity: 0.35; pointer-events: none; }
+.btn-filled { background: var(--accent); color: var(--on-accent); }
+.btn-tinted { background: var(--tint); color: var(--tint-text); }
+.btn-gray { background: var(--fill); color: var(--text); }
+.link { color: var(--link); font-size: 17px; }
+
+/* Text field */
+.field { background: var(--card); border-radius: 14px; border: 2px solid transparent; transition: border-color 0.2s; }
+
+/* Flashcard flip */
+.flip { perspective: 1400px; }
+.flip-inner { transition: transform 0.55s cubic-bezier(.3,.7,.3,1); transform-style: preserve-3d; }
+.flip-inner.flipped { transform: rotateY(180deg); }
+.flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
+
+/* Animations */
+@keyframes num-out { to { transform: translateY(-110%); opacity: 0; } }
+@keyframes num-in { 0% { transform: translateY(110%); opacity: 0; } 70% { transform: translateY(-6%); opacity: 1; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes pop { 0% { transform: scale(0.85); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes fall { 0% { transform: translateY(-10vh) rotate(0); opacity: 1; } 100% { transform: translateY(110vh) rotate(600deg); opacity: 0.9; } }
+@keyframes rise { 0% { transform: translateY(12px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-7px); } 75% { transform: translateX(7px); } }
+.num-out { animation: num-out 0.45s cubic-bezier(.5,0,.75,0) 0.6s forwards; }
+.num-in { opacity: 0; animation: num-in 0.6s cubic-bezier(.2,.8,.2,1) 1s forwards; }
+.pop { animation: pop 0.5s cubic-bezier(.2,.8,.2,1) both; }
+.rise { animation: rise 0.45s cubic-bezier(.2,.8,.2,1) both; }
+.shake { animation: shake 0.28s ease-in-out 2; }
+.confetti-piece { position: fixed; top: 0; width: 8px; height: 12px; border-radius: 3px; opacity: 0; animation: fall 2.6s ease-in forwards; }

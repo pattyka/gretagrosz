@@ -1,0 +1,71 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bw-app-dev",
+      "runtimeExecutable": "/Users/gretagrosz/BW APP/.tools/node/bin/node",
+      "runtimeArgs": [
+        "/Users/gretagrosz/BW APP/node_modules/vite/bin/vite.js",
+        "--port",
+        "5173"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "spark-dev",
+      "runtimeExecutable": "/Users/gretagrosz/BW APP/.tools/node/bin/node",
+      "runtimeArgs": [
+        "/Users/gretagrosz/BW APP/node_modules/vite/bin/vite.js",
+        "/Users/gretagrosz/BW APP/hobby-app",
+        "--port",
+        "5180"
+      ],
+      "port": 5180
+    },
+    {
+      "name": "vocab-dev",
+      "runtimeExecutable": "/Users/gretagrosz/BW APP/.tools/node/bin/node",
+      "runtimeArgs": [
+        "/Users/gretagrosz/BW APP/node_modules/vite/bin/vite.js",
+        "/Users/gretagrosz/BW APP/vocab-app",
+        "--port",
+        "5190"
+      ],
+      "port": 5190
+    },
+    {
+      "name": "math-dev",
+      "runtimeExecutable": "/Users/gretagrosz/BW APP/.tools/node/bin/node",
+      "runtimeArgs": [
+        "/Users/gretagrosz/BW APP/node_modules/vite/bin/vite.js",
+        "/Users/gretagrosz/BW APP/math-app",
+        "--port",
+        "5200"
+      ],
+      "port": 5200
+    },
+    {
+      "name": "regional-dev",
+      "runtimeExecutable": "/Users/gretagrosz/BW APP/.tools/node/bin/node",
+      "runtimeArgs": [
+        "/Users/gretagrosz/BW APP/node_modules/vite/bin/vite.js",
+        "/Users/gretagrosz/BW APP/regional-app",
+        "--port",
+        "5210"
+      ],
+      "port": 5210
+    },
+    {
+      "name": "deploy-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5300",
+        "--directory",
+        "/Users/gretagrosz/BW APP/deploy/site"
+      ],
+      "port": 5300
+    }
+  ]
+}

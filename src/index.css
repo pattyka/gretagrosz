@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Standard-Farbthema (Blau); wird in den Einstellungen umgestellt */
+:root {
+  --accent: 147 197 253;
+  --accent-ink: 37 99 235;
+  --accent-on: 30 58 138;
+  --bg: 239 245 254;
+  --title: 15 23 42;
+  --muted: 100 116 139;
+  --nav: 37 99 235;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  /* Eine durchgehende Hintergrundfarbe */
+  @apply font-body bg-page text-slate-800;
+  transition: background-color 0.3s;
+  min-height: 100vh;
+}
+

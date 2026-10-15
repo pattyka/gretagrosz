@@ -1,0 +1,13 @@
+{
+  "name": "Blank — share what you make",
+  "short_name": "Blank",
+  "description": "Start a hobby, track your projects and share what you make.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5B4BDB",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

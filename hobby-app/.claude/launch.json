@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "spark-dev",
+      "runtimeExecutable": "/Users/gretagrosz/BW APP/.tools/node/bin/node",
+      "runtimeArgs": ["/Users/gretagrosz/BW APP/node_modules/vite/bin/vite.js", "/Users/gretagrosz/BW APP/hobby-app", "--port", "5180"],
+      "port": 5180
+    }
+  ]
+}
