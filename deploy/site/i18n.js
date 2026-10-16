@@ -26,8 +26,8 @@ const DE = {
   'Open menu': 'Menü öffnen',
 
   // Home
-  'Studying business.': 'Wirtschaft lernen.',
-  'Already doing it.': 'Und schon machen.',
+  'Banks are competing for my generation.': 'Banken kämpfen um meine Generation.',
+  'I researched how.': 'Ich habe untersucht, wie.',
   'Business and finance student (HAK) in Austria. I speak English, Hungarian and German.': 'Wirtschafts- und Finanzschülerin (HAK) in Österreich. Ich spreche Englisch, Ungarisch und Deutsch.',
   'Business and finance student (HAK) in Austria.': 'Wirtschafts- und Finanzschülerin (HAK) in Österreich.',
   'of young Austrians bank traditionally': 'der jungen Österreicher/innen sind bei einer klassischen Bank',
@@ -95,6 +95,39 @@ const DE = {
   'Email me': 'E-Mail schreiben',
   'Connect on LinkedIn': 'Auf LinkedIn vernetzen',
   'Download my CV': 'Lebenslauf herunterladen',
+
+  // Home (new layout)
+  'I’m Greta, a business and finance student (HAK) in Austria. I’m looking for a banking internship.':
+    'Ich bin Greta, Wirtschafts- und Finanzschülerin an einer HAK in Österreich. Ich suche ein Praktikum im Bankwesen.',
+  'I don’t wait to be taught.': 'Ich warte nicht, bis man es mir erklärt.',
+  'I find out.': 'Ich finde es selbst heraus.',
+  'I’ve worked a till, sold my own designs to strangers and explained grammar to classmates. Real customers teach more than any textbook.':
+    'Ich stand an der Kassa, habe meine eigenen Designs an Fremde verkauft und Mitschülern Grammatik erklärt. Echte Kunden bringen einem mehr bei als jedes Schulbuch.',
+  'If I need a tool, I build it. In Excel, or from scratch.': 'Fehlt mir ein Werkzeug, baue ich es selbst. In Excel oder gleich von Grund auf.',
+  'English, Hungarian, German. I’ll reply in all three.': 'Englisch, Ungarisch, Deutsch. Ich antworte in allen dreien.',
+  'English is my first language. I went to school in England.': 'Englisch ist meine erste Sprache. Zur Schule gegangen bin ich in England.',
+  'Age 12 · 2021': 'Mit 12 · 2021',
+  'Hungarian is my other native language. A bilingual school first, then at 14 a bilingual business school (HAK).':
+    'Ungarisch ist meine zweite Muttersprache. Zuerst eine zweisprachige Schule, mit 14 dann eine zweisprachige HAK.',
+  'Age 17 · 2026': 'Mit 17 · 2026',
+  'Now I study business and finance at a BHAK, a business academy, in German.': 'Jetzt lerne ich Wirtschaft und Finanzen an einer BHAK, auf Deutsch.',
+  'Next stop: a banking internship.': 'Nächster Halt: ein Praktikum im Bankwesen.',
+  'Until then, I keep learning by doing: research, apps and my own small business.': 'Bis dahin lerne ich weiter durchs Tun: Analysen, Apps und mein eigenes kleines Business.',
+  'United Kingdom': 'Großbritannien',
+  'Hungary': 'Ungarn',
+  'Austria': 'Österreich',
+  'What I do': 'Was ich mache',
+  'What I do.': 'Was ich mache.',
+  'Market research on how Austria’s banks compete for Gen Z. An Excel calculator that compares youth accounts. Forage programmes with JPMorgan and PNC.':
+    'Eine Marktanalyse, wie Österreichs Banken um die Gen Z konkurrieren. Ein Excel-Rechner, der Jugendkonten vergleicht. Forage-Programme mit JPMorgan und PNC.',
+  'Four apps I designed and built: Deca, BW Buddy, Blank and QED.': 'Vier Apps, selbst entworfen und gebaut: Deca, BW Buddy, Blank und QED.',
+  'Weekend Ink: custom temporary tattoos I design and sell at events. Clothes I sew and sell online.':
+    'Weekend Ink: individuelle temporäre Tattoos, die ich entwerfe und auf Events verkaufe. Kleidung, die ich nähe und online verkaufe.',
+  'Also': 'Außerdem',
+  'English tutoring for classmates. Research support at Global Green Group (2025). A summer job at Lipót Bad und Camping (2024). One week every summer volunteering at a children’s camp.':
+    'Englisch-Nachhilfe für Mitschüler/innen. Unterstützung in der Forschung bei Global Green Group (2025). Ein Ferialjob bei Lipót Bad und Camping (2024). Jeden Sommer eine Woche ehrenamtlich in einem Kinderferienlager.',
+  'Excel (intermediate), accounting basics, SAP basics, data analysis. English C1 (Euroexam), Hungarian, German B2.':
+    'Excel (mittlere Kenntnisse), Grundlagen Rechnungswesen, SAP-Grundkenntnisse, Datenanalyse. Englisch C1 (Euroexam), Ungarisch, Deutsch B2.',
 
   // Finance
   'My finance work.': 'Meine Finanzprojekte.',

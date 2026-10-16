@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/site.css" />
+<link rel="stylesheet" href="/home.css" />
 <script>
   // Hide the page for a moment if it will be shown in German, so English doesn't flash first
   try { var lang = localStorage.getItem('lang') } catch (e) {}
@@ -56,8 +57,8 @@
   <nav class="sb-links sb-sections" aria-label="On this page">
     <a href="#top" data-section="top">Intro</a>
     <a href="#about" data-section="about">About</a>
-    <a href="#experience" data-section="experience">Experience</a>
     <a href="#journey" data-section="journey">My journey</a>
+    <a href="#work" data-section="work">What I do</a>
     <a href="#contact" data-section="contact">Contact</a>
   </nav>
   <div class="sb-foot">
@@ -68,97 +69,92 @@
 </aside>
 <div class="scrim" id="scrim"></div>
 
-<header class="hero" id="top">
+<header class="h-hero" id="top">
   <div class="wrap">
-    <div class="hero-inner" id="hero">
-      <div>
-        <h1>Greta Grosz</h1>
-        <p class="sub">Business and finance student (HAK) in Austria.</p>
-      </div>
-        <div class="doors hero-doors">
-          <a class="door" href="/finance/">
-            <div>
-              <div class="mini-stat"><strong>83%</strong><span>of young Austrians bank traditionally</span></div>
-              <div class="mini-chart" aria-hidden="true"><i style="--w: 92%"></i><i style="--w: 78%"></i><i style="--w: 62%"></i></div>
-            </div>
-            <div><b>See my finance work</b><small>Market research · Excel tool</small></div>
-          </a>
-          <a class="door dark" href="/apps/">
-            <div class="mini-icons" aria-hidden="true">
-              <span class="icon i-ten"><img src="/img/icon-ten.png" alt="" /></span><span class="icon i-bw"><img src="/img/icon-bw.png" alt="" /></span><span class="icon i-blank"><img src="/img/icon-blank.png" alt="" /></span><span class="icon i-qed"><img src="/img/icon-qed.png" alt="" /></span>
-            </div>
-            <div><b>See my apps</b><small>4 apps, all live</small></div>
-          </a>
-          <a class="door soft" href="/business/">
-            <div class="mini-icons" aria-hidden="true">
-              <span class="icon i-tattoo"><img src="/img/icon-weekendink.png" alt="" /></span><span class="icon i-cloth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.5a2 2 0 1 1 2 2v1.3L3.6 14.6a1.2 1.2 0 0 0 .7 2.2h15.4a1.2 1.2 0 0 0 .7-2.2L12 8.8"/></svg></span>
-            </div>
-            <div><b>See my business</b><small>Weekend Ink · clothing</small></div>
-          </a>
-        </div>
+    <div class="h-hero-inner">
+      <p class="h-eyebrow"><span class="h-line"><span>Greta Grosz</span></span></p>
+      <h1 class="h-title"><span class="h-line"><span>Banks are competing for my generation.</span></span> <span class="h-line h-accent"><span>I researched how.</span></span></h1>
+      <p class="h-sub"><span class="h-line"><span>I’m Greta, a business and finance student (HAK) in Austria. I’m looking for a banking internship.</span></span></p>
+      <nav class="h-links" aria-label="Pages">
+        <a href="/finance/">Finance work</a>
+        <a href="/apps/">Apps</a>
+        <a href="/business/">Business</a>
+      </nav>
     </div>
   </div>
 </header>
 
-<section class="statement" id="about">
-  <div class="sticky">
+<section class="h-about" id="about">
+  <div class="h-about-pin">
     <div class="wrap">
       <p class="label">About</p>
-      <p class="words" id="words">I study business and finance, and I learn by doing. I research markets, build tools in Excel, design my own apps and sell my own products. Three countries, three languages.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Experience -->
-<section class="section" id="experience" style="background: #F7F8FA">
-  <div class="wrap">
-    <p class="label fade">Experience</p>
-    <h2 class="big fade">Work, projects <span>and programmes.</span></h2>
-    <div class="rows">
-      <div class="xp fade"><p class="when">Virtual</p><div><h3>Forage Virtual Experience Programmes</h3><p>JPMorgan Chase &amp; Co. – Quantitative Research. PNC Bank – Financial Services and banking simulation. Hands-on tasks in financial analysis and banking processes.</p></div></div>
-      <div class="xp fade"><p class="when">2026</p><div><h3>Event sales <span>· Weekend Ink, custom temporary tattoos</span></h3><p>Designing my own temporary tattoos and selling them at events.</p></div></div>
-      <div class="xp fade"><p class="when">Ongoing</p><div><h3>Online sales <span>· Clothing</span></h3><p>Selling self-sewn and selected clothing through an online platform.</p></div></div>
-      <div class="xp fade"><p class="when">Ongoing</p><div><h3>English tutoring</h3><p>Helping classmates with English grammar and vocabulary.</p></div></div>
-      <div class="xp fade"><p class="when">June 2025</p><div><h3>Global Green Group <span>· Research support</span></h3><p>Supporting research and lab work, data entry and documentation.</p></div></div>
-      <div class="xp fade"><p class="when">Summer 2024</p><div><h3>Lipót Bad und Camping <span>· Summer job</span></h3><p>Running the till, selling ice cream and preparing fast food.</p></div></div>
-      <div class="xp fade"><p class="when">Summers</p><div><h3>Volunteering <span>· Children’s summer camp</span></h3><p>One week every summer looking after children, helping with group activities and organising the day.</p></div></div>
-    </div>
-
-    <div class="skills">
-      <div class="panel fade">
-        <h4>Languages</h4>
-        <div class="lang">English <span>Native · C1 Euroexam</span></div>
-        <div class="lang">Hungarian <span>Native</span></div>
-        <div class="lang">German <span>B2</span></div>
-      </div>
-      <div class="panel fade">
-        <h4>Skills</h4>
-        <div class="skilllist"><span>Excel (intermediate)</span><span>Word &amp; PowerPoint</span><span>Accounting basics</span><span>SAP basics</span><span>Data analysis</span><span>AI productivity tools</span></div>
-        <div class="skilllist" style="margin-top: 14px"><span>Analytical thinking</span><span>Structured work</span><span>Teamwork</span><span>Presenting</span><span>Reliability</span></div>
+      <p class="h-words" id="h-words"><span>I don’t wait to be taught.</span> <span class="h-hi">I find out.</span></p>
+      <div class="h-more" id="h-more">
+        <p>I’ve worked a till, sold my own designs to strangers and explained grammar to classmates. Real customers teach more than any textbook.</p>
+        <p>If I need a tool, I build it. In Excel, or from scratch.</p>
+        <p>English, Hungarian, German. I’ll reply in all three.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="journey" id="journey">
+<section class="h-journey" id="journey">
+  <div class="h-pin">
+    <div class="h-map" aria-hidden="true"><svg id="h-svg"></svg></div>
+    <div class="h-story">
+      <p class="label">My journey</p>
+      <ol class="h-chs">
+        <li class="h-ch">
+          <p class="h-when">2009</p>
+          <h3>Born in the U.K.</h3>
+          <p>English is my first language. I went to school in England.</p>
+        </li>
+        <li class="h-ch">
+          <p class="h-when">Age 12 · 2021</p>
+          <h3>Moved to Hungary.</h3>
+          <p>Hungarian is my other native language. A bilingual school first, then at 14 a bilingual business school (HAK).</p>
+        </li>
+        <li class="h-ch">
+          <p class="h-when">Age 17 · 2026</p>
+          <h3>Moved to Austria alone.</h3>
+          <p>Now I study business and finance at a BHAK, a business academy, in German.</p>
+        </li>
+        <li class="h-ch">
+          <p class="h-when">Now</p>
+          <h3>Next stop: a banking internship.</h3>
+          <p>Until then, I keep learning by doing: research, apps and my own small business.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="h-work" id="work">
   <div class="wrap">
-    <h2 class="fade">My journey.</h2>
-    <div class="route" id="route">
-      <svg id="route-svg" aria-hidden="true"></svg>
-      <div class="place">
-        <h3>Born in the U.K.</h3>
+    <h2 class="h-h2 fade">What I do.</h2>
+    <div class="h-rows">
+      <a class="h-row fade" href="/finance/">
+        <span class="h-k">Finance</span>
+        <span class="h-d">Market research on how Austria’s banks compete for Gen Z. An Excel calculator that compares youth accounts. Forage programmes with JPMorgan and PNC.</span>
+        <span class="h-go">See my finance work</span>
+      </a>
+      <a class="h-row fade" href="/apps/">
+        <span class="h-k">Apps</span>
+        <span class="h-d">Four apps I designed and built: Deca, BW Buddy, Blank and QED.</span>
+        <span class="h-go">See my apps</span>
+      </a>
+      <a class="h-row fade" href="/business/">
+        <span class="h-k">Business</span>
+        <span class="h-d">Weekend Ink: custom temporary tattoos I design and sell at events. Clothes I sew and sell online.</span>
+        <span class="h-go">See my business</span>
+      </a>
+      <div class="h-row h-plain fade">
+        <span class="h-k">Also</span>
+        <span class="h-d">English tutoring for classmates. Research support at Global Green Group (2025). A summer job at Lipót Bad und Camping (2024). One week every summer volunteering at a children’s camp.</span>
       </div>
-      <div class="place">
-        <p class="when">Age 12</p>
-        <h3>Moved to Hungary.</h3>
-      </div>
-      <div class="place">
-        <p class="when">Age 17</p>
-        <h3>Moved to Austria alone.</h3>
-      </div>
-      <div class="place">
-        <p class="when">Now</p>
-        <h3>Finance student, exploring business ventures.</h3>
+      <div class="h-row h-plain fade">
+        <span class="h-k">Skills</span>
+        <span class="h-d">Excel (intermediate), accounting basics, SAP basics, data analysis. English C1 (Euroexam), Hungarian, German B2.</span>
       </div>
     </div>
   </div>
@@ -181,5 +177,6 @@
 
 <script src="/i18n.js"></script>
 <script src="/site.js"></script>
+<script src="/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,124 @@
+/* Homepage only. Everything here is prefixed h- so the other pages never pick it up. */
+
+/* ---------- Hero: big type that rises in, then gently steps back as you scroll ---------- */
+.h-hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 120px 0 90px; }
+.h-hero .wrap { width: 100%; }
+.h-hero-inner { transform-origin: 0 40%; will-change: transform, opacity; }
+.h-line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.h-line > span { display: block; animation: h-rise 1.1s cubic-bezier(.2,.8,.2,1) both; }
+.h-eyebrow { margin: 0; font-size: clamp(17px, 1.8vw, 21px); font-weight: 600; color: var(--muted); letter-spacing: -0.01em; }
+.h-title { margin: 14px 0 0; font-size: clamp(46px, 7.8vw, 112px); line-height: 1.0; letter-spacing: -0.05em; font-weight: 700; color: var(--navy); }
+.h-title .h-line:first-child > span { animation-delay: 0.08s; }
+.h-accent { color: var(--periwinkle); }
+.h-accent > span { animation-delay: 0.2s !important; }
+.h-sub { margin: 30px 0 0; max-width: 600px; font-size: clamp(19px, 2vw, 24px); line-height: 1.4; font-weight: 500; letter-spacing: -0.02em; color: var(--muted); }
+.h-sub .h-line > span { animation-delay: 0.34s; }
+.h-links { display: flex; flex-wrap: wrap; gap: 14px 30px; margin-top: 40px; animation: h-fade 1s ease 0.6s both; }
+.h-links a { font-size: 17px; font-weight: 600; color: var(--azure); letter-spacing: -0.015em; }
+.h-links a::after { content: '›'; display: inline-block; margin-left: 0.25em; transition: transform 0.3s cubic-bezier(.2,.8,.2,1); }
+.h-links a:hover { color: var(--navy); }
+.h-links a:hover::after { transform: translateX(3px); }
+@keyframes h-rise { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes h-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (min-width: 1100px) { .h-hero { padding-top: 80px; } }
+
+/* ---------- About: a short statement lit word by word while pinned, then three plain lines rise in ---------- */
+.h-about { height: 240vh; }
+.h-about-pin { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; align-items: center; }
+.h-about-pin .wrap { width: 100%; }
+.h-words { margin: 0; max-width: 900px; font-size: clamp(44px, 8vw, 104px); line-height: 1.0; letter-spacing: -0.045em; word-spacing: 0.04em; font-weight: 700; color: var(--navy); text-wrap: balance; }
+:lang(de) .h-words { font-size: clamp(38px, 6.6vw, 88px); }
+.h-words span { color: var(--faint); transition: color 0.35s; }
+.h-words span.lit { color: var(--navy); }
+.h-words span.lit.hi { color: var(--periwinkle); }
+.h-more { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 0 40px; margin-top: clamp(44px, 7vh, 80px); max-width: 980px; }
+.h-more p { margin: 0; padding-top: 18px; border-top: 1px solid var(--line); font-size: clamp(17px, 1.5vw, 19px); line-height: 1.45; letter-spacing: -0.015em; font-weight: 500; color: var(--muted); text-wrap: pretty; }
+.h-js .h-more p { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.9s cubic-bezier(.2,.8,.2,1); }
+.h-js .h-more.on p { opacity: 1; transform: none; }
+.h-js .h-more.on p:nth-child(2) { transition-delay: 0.12s; }
+.h-js .h-more.on p:nth-child(3) { transition-delay: 0.24s; }
+@media (max-width: 860px) {
+  .h-more { grid-template-columns: 1fr; gap: 0; max-width: 560px; }
+  .h-more p { padding: 14px 0 16px; }
+}
+@media (max-height: 620px) {
+  .h-about { height: auto; padding: 110px 0; }
+  .h-about-pin { position: static; height: auto; }
+}
+
+/* ---------- Journey: the flight UK → Hungary → Austria ---------- */
+/* Without JavaScript (and with reduced motion) it is a simple list; JS turns on the map and the pinned scene. */
+.h-journey { padding: 120px 0; }
+.h-map { display: none; }
+.h-story { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.h-chs { list-style: none; margin: 0; padding: 0; display: grid; gap: 44px; }
+.h-when { margin: 0; font-size: 15px; font-weight: 600; color: var(--periwinkle); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.h-ch h3 { margin: 8px 0 0; font-size: clamp(30px, 4vw, 54px); line-height: 1.04; letter-spacing: -0.045em; font-weight: 700; color: var(--navy); }
+.h-ch p:last-child { margin: 14px 0 0; max-width: 440px; font-size: clamp(17px, 1.6vw, 19px); line-height: 1.45; font-weight: 500; color: var(--muted); letter-spacing: -0.015em; }
+.h-has-map .h-map { display: block; position: relative; height: 62vh; min-height: 340px; margin-bottom: 56px; }
+.h-map svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.h-land path { fill: #F1F3F7; stroke: #D9E0EA; stroke-width: 1; vector-effect: non-scaling-stroke; stroke-linejoin: round; transition: fill 0.9s ease, stroke 0.9s ease; }
+.h-land path.on { fill: var(--card-blue); stroke: #C3CCD9; }
+.h-trail { fill: none; stroke: var(--periwinkle); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 5 7; }
+.h-dot { fill: #fff; stroke: var(--faint); stroke-width: 2; transition: fill 0.5s, stroke 0.5s; }
+.h-dot.on { fill: var(--periwinkle); stroke: var(--periwinkle); }
+.h-ring { fill: none; stroke: var(--periwinkle); stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.h-ring.go { animation: h-ring 1.4s cubic-bezier(.2,.8,.2,1); }
+@keyframes h-ring { from { opacity: 0.9; transform: scale(1); } to { opacity: 0; transform: scale(4.5); } }
+.h-name { font-size: 13px; font-weight: 600; fill: var(--muted); letter-spacing: -0.005em; opacity: 0; transition: opacity 0.6s; }
+.h-name.on { opacity: 1; }
+.h-plane { fill: var(--navy); }
+
+/* The pinned scene */
+.h-live { height: 560vh; padding: 0; }
+.h-live .h-pin { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+.h-live .h-map { position: absolute; inset: 0; height: auto; min-height: 0; margin: 0; }
+.h-live .h-story { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); margin: 0; max-width: none; padding: 0 clamp(24px, 4vw, 56px); pointer-events: none; }
+.h-live .h-story > * { width: min(38%, 440px); }
+.h-live .h-chs { display: block; position: relative; height: 300px; }
+.h-live .h-ch { position: absolute; inset: 0 0 auto; opacity: 0; will-change: transform, opacity; }
+
+@media (max-width: 899px) {
+  .h-journey { padding: 96px 0; }
+  .h-live { padding: 0; }
+  .h-live .h-pin { display: flex; flex-direction: column; padding-top: 48px; }
+  .h-live .h-map { position: relative; inset: auto; flex: 1 1 auto; -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent); mask-image: linear-gradient(to bottom, #000 88%, transparent); }
+  .h-live .h-story { position: relative; top: auto; transform: none; flex: none; padding: 0 24px max(28px, env(safe-area-inset-bottom)); }
+  .h-live .h-story > * { width: auto; }
+  .h-live .label { margin-bottom: 10px; }
+  .h-live .h-chs { height: 206px; }
+  .h-live .h-ch h3 { font-size: 30px; }
+  .h-live .h-ch p:last-child { margin-top: 10px; font-size: 16px; }
+  .h-has-map .h-map { height: 52vh; }
+}
+
+/* ---------- What I do: an index into the rest of the site ---------- */
+.h-work { padding: 150px 0 40px; }
+.h-h2 { margin: 0; font-size: clamp(40px, 6.4vw, 80px); line-height: 1.04; letter-spacing: -0.045em; font-weight: 700; color: var(--navy); }
+.h-rows { margin-top: 56px; border-bottom: 1px solid var(--line); }
+.h-row { display: grid; grid-template-columns: minmax(140px, 220px) minmax(0, 1fr) 180px; gap: 12px 32px; align-items: baseline; padding: 34px 0; border-top: 1px solid var(--line); color: var(--azure); }
+.h-k { font-size: clamp(26px, 3vw, 36px); font-weight: 700; letter-spacing: -0.04em; color: var(--navy); line-height: 1.1; }
+.h-d { font-size: clamp(17px, 1.6vw, 19px); line-height: 1.5; letter-spacing: -0.015em; max-width: 560px; }
+.h-go { justify-self: end; font-size: 15px; font-weight: 600; color: var(--periwinkle); white-space: nowrap; }
+.h-go::after { content: '›'; display: inline-block; margin-left: 0.25em; transition: transform 0.3s cubic-bezier(.2,.8,.2,1); }
+a.h-row:hover .h-k { color: var(--periwinkle); }
+a.h-row:hover .h-go::after { transform: translateX(4px); }
+.h-k { transition: color 0.25s; }
+.h-plain .h-k { color: var(--muted); }
+.h-plain .h-d { color: var(--muted); }
+@media (max-width: 760px) {
+  .h-work { padding-top: 110px; }
+  .h-row { grid-template-columns: 1fr; padding: 28px 0; gap: 8px; }
+  .h-go { justify-self: start; margin-top: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h-line > span, .h-links { animation: none; }
+  .h-about { height: auto; padding: 130px 0; }
+  .h-about-pin { position: static; height: auto; }
+  .h-words span { color: var(--navy); }
+  .h-words span.hi { color: var(--periwinkle); }
+  .h-more p { opacity: 1; transform: none; }
+  .h-ring.go { animation: none; }
+}
