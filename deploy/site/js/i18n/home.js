@@ -2,8 +2,8 @@
 I18N.add({
   // Head
   'Greta Grosz': 'Greta Grosz',
-  'Greta Grosz, 17: business and finance student in Austria, born in the UK, raised in Hungary. Market research on how banks win Gen Z, four apps she built, and the internship she is looking for.':
-    'Greta Grosz, 17: Wirtschafts- und Finanzschülerin in Österreich, geboren in Großbritannien, aufgewachsen in Ungarn. Eine Marktanalyse, wie Banken die Gen Z gewinnen, vier selbst gebaute Apps und das Praktikum, das sie sucht.',
+  'Greta Grosz, 17: business and finance student in Austria, born in the UK, raised in Hungary. Market research on how banks win Gen Z, four apps she built, the temporary tattoos and clothes she makes and sells, and the internship she is looking for.':
+    'Greta Grosz, 17: Wirtschafts- und Finanzschülerin in Österreich, geboren in Großbritannien, aufgewachsen in Ungarn. Eine Marktanalyse, wie Banken die Gen Z gewinnen, vier selbst gebaute Apps, die temporären Tattoos und Kleidungsstücke, die sie macht und verkauft, und das Praktikum, das sie sucht.',
 
   // Hero
   'Banks are competing for my generation.': 'Banken kämpfen um meine Generation.',
@@ -15,40 +15,14 @@ I18N.add({
   'LinkedIn': 'LinkedIn',
   'Hi, I’m Greta!': 'Hallo, ich bin Greta!',
 
-  // Proof
-  'At a glance': 'Auf einen Blick',
-  'years old': 'Jahre alt',
-  'Born in the UK, 2009': '2009 in Großbritannien geboren',
-  'countries': 'Länder',
-  'UK': 'GB',
-  'HU': 'HU',
-  'AT': 'AT',
-  'United Kingdom, Hungary, Austria': 'Großbritannien, Ungarn, Österreich',
-  'languages': 'Sprachen',
+  // Shared by the languages list
   'English': 'Englisch',
   'Hungarian': 'Ungarisch',
   'German': 'Deutsch',
-  'native · C1': 'Muttersprache · C1',
-  'native': 'Muttersprache',
   'B2': 'B2',
-  'apps, all live': 'Apps, alle live',
-  'Deca, BW Buddy, Blank, QED': 'Deca, BW Buddy, Blank, QED',
-  'market analysis': 'Marktanalyse',
-  'How Austria’s banks compete for Gen Z': 'Wie Österreichs Banken um die Gen\u00A0Z kämpfen',
-  'Forage programmes': 'Forage-Programme',
-  'JPMorgan Chase & Co. · PNC Bank': 'JPMorgan Chase & Co. · PNC\u00A0Bank',
-
-  // About
-  'About': 'Über mich',
-  'I don’t wait to be taught.': 'Ich warte nicht, bis man es mir erklärt.',
-  'I find out.': 'Ich finde es selbst heraus.',
-  'I’ve worked a till, explained grammar to classmates and organised the day at a children’s camp. Real people teach more than any textbook.':
-    'Ich stand an der Kassa, habe Mitschüler/innen Grammatik erklärt und in einem Kinderferienlager den Tag organisiert. Echte Menschen bringen einem mehr bei als jedes Schulbuch.',
-  'If I need a tool, I build it. In Excel, or from scratch.': 'Fehlt mir ein Werkzeug, baue ich es selbst. In Excel oder gleich von Grund auf.',
-  'English, Hungarian, German. I’ll reply in all three.': 'Englisch, Ungarisch, Deutsch. Ich antworte in allen dreien.',
 
   // Journey
-  'Three countries by 17.': 'Drei Länder mit 17.',
+  'How I got here.': 'Wie ich hierhergekommen bin.',
   'Born in the UK.': 'Geboren in Großbritannien.',
   'English is my first language. I went to school in England.': 'Englisch ist meine erste Sprache. Zur Schule gegangen bin ich in England.',
   'Age 12 · 2021': 'Mit 12 · 2021',
@@ -60,8 +34,8 @@ I18N.add({
   'Now I study business and finance at a BHAK, a business academy, in German.': 'Jetzt lerne ich Wirtschaft und Finanzen an einer BHAK, auf Deutsch.',
   'Now': 'Jetzt',
   'Next stop: a banking internship.': 'Nächster Halt: ein Praktikum im Bankwesen.',
-  'Until then I keep learning by doing: market research, Excel tools and four apps of my own.':
-    'Bis dahin lerne ich weiter durchs Tun: Marktanalysen, Excel-Tools und vier eigene Apps.',
+  'Until then I learn by doing: market research, an Excel tool, four apps and a small business of my own.':
+    'Bis dahin lerne ich durchs Tun: eine Marktanalyse, ein Excel-Tool, vier Apps und ein kleines eigenes Business.',
   'United Kingdom': 'Großbritannien',
   'Hungary': 'Ungarn',
   'Austria': 'Österreich',
@@ -79,6 +53,11 @@ I18N.add({
   'Arrive blank, leave with a project.': 'Leer ankommen, mit einem Projekt gehen.',
   'Maths that shows you the path, proof by proof.': 'Mathe, die dir den Weg zeigt, Beweis für Beweis.',
   'See my apps': 'Meine Apps',
+  'Things I make and sell.': 'Selbst gemacht, selbst verkauft.',
+  'Custom temporary tattoos I design for festivals, events and teams.': 'Temporäre Tattoos nach Wunsch, von mir entworfen, für Festivals, Events und Teams.',
+  'Clothes': 'Kleidung',
+  'Pieces I sew or pick out myself, sold online.': 'Stücke, die ich selbst nähe oder aussuche, online verkauft.',
+  'See my business': 'Mein Business',
 
   // Experience
   'Experience.': 'Erfahrung.',
@@ -88,6 +67,13 @@ I18N.add({
   'Virtual experience · Financial Services': 'Virtual Experience · Financial Services',
   'A banking simulation and how banking processes work.': 'Eine Banksimulation und wie Bankprozesse ablaufen.',
   'Ongoing': 'Laufend',
+  'My first company': 'Mein erstes Unternehmen',
+  'Designing custom temporary tattoos for festivals, events and teams, and selling them at events.':
+    'Temporäre Tattoos nach Wunsch für Festivals, Events und Teams entwerfen und direkt auf Events verkaufen.',
+  'Clothing': 'Kleidung',
+  'Sewing and selling online': 'Nähen und online verkaufen',
+  'Sewing some pieces myself and picking out others, then photographing them, writing the listings and shipping on time.':
+    'Manche Stücke nähe ich selbst, andere suche ich aus. Dann fotografiere ich sie, schreibe die Angebote und verschicke pünktlich.',
   'English tutoring': 'Englisch-Nachhilfe',
   'For classmates': 'Für Mitschüler/innen',
   'Helping classmates with English grammar and vocabulary.': 'Unterstützung von Mitschüler/innen bei Grammatik und Vokabeln in Englisch.',

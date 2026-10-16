@@ -1,4 +1,4 @@
-/* Homepage: hero, proof tiles, about, journey map, what I do, experience, contact. */
+/* Homepage: hero, journey map, what I do, experience, contact. */
 
 /* Hero */
 .hero { padding: calc(var(--nav-h) + clamp(48px, 7vw, 104px)) 0 clamp(56px, 6vw, 88px); }
@@ -33,57 +33,7 @@
 }
 
 /* Hover lifts use translate/scale so they never fight the reveal's transform */
-html.js .tile.rv, html.js .wcard.rv { transition: opacity .7s ease, transform .9s var(--out), translate .5s var(--spring), scale .5s var(--spring), box-shadow .4s; transition-delay: calc(var(--d, 0) * 80ms), calc(var(--d, 0) * 80ms), 0s, 0s, 0s; }
-
-/* Proof tiles */
-.proof { padding-bottom: clamp(16px, 3vw, 32px); }
-.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.tile { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto 1fr; column-gap: 18px; align-items: start; align-content: center; min-height: 148px; padding: 24px 26px; border-radius: var(--r-lg); background: var(--snow); color: var(--ink); overflow: hidden; hyphens: manual; -webkit-hyphens: manual; transition: translate .5s var(--spring), scale .5s var(--spring); }
-@media (hover: hover) { .tile:hover { translate: 0 -3px; scale: 1.012; } }
-.tile .n { grid-row: 1 / 3; padding-top: 4px; font-size: 76px; line-height: .82; font-weight: 900; letter-spacing: -.06em; font-variant-numeric: tabular-nums; }
-.tile .k { font-size: 19px; font-weight: 800; letter-spacing: -.025em; line-height: 1.15; }
-.tile .v { margin-top: 6px; font-size: 15px; font-weight: 700; line-height: 1.35; color: var(--muted); }
-.tile .k + .route, .tile .k + .langs, .tile .k + .fan { margin-top: 14px; }
-.t-age { background: var(--ink); color: var(--white); }
-.t-age .v { color: var(--mist); }
-html.js .tile.rv .n { transition: transform .8s var(--spring), opacity .4s; transition-delay: calc(var(--d, 0) * 80ms + 140ms); }
-html.js .tile.rv:not(.in) .n { opacity: 0; transform: scale(.45) translateY(10px); }
-
-.route { position: relative; display: flex; justify-content: space-between; max-width: 190px; padding-top: 22px; container-type: inline-size; }
-.route::before { content: ''; position: absolute; left: 14px; right: 14px; bottom: 13px; height: 2px; background: repeating-linear-gradient(90deg, var(--faint) 0 4px, transparent 4px 9px); }
-.route i { position: relative; display: grid; place-items: center; min-width: 34px; height: 26px; padding: 0 8px; border-radius: 999px; background: var(--white); box-shadow: 0 0 0 1px var(--line); font: normal 900 12px/1 var(--font); letter-spacing: .02em; }
-.route i:last-of-type { background: var(--ink); color: var(--white); box-shadow: none; }
-.mini-plane { position: absolute; left: 4px; top: 0; width: 18px; height: 18px; fill: var(--blue); transform: translateX(calc(100cqw - 26px)) rotate(90deg); }
-html.js .t-route:not(.in) .mini-plane { transform: rotate(90deg); }
-html.js .t-route.in .mini-plane { animation: fly 2.2s var(--out) .5s both; }
-@media (hover: hover) { html.js .t-route.in:hover .mini-plane { animation: hop 1.5s var(--out) both; } }
-@keyframes fly { from { transform: rotate(90deg); } }
-@keyframes hop { 0% { transform: rotate(90deg); } 50% { transform: translateX(calc(50cqw - 13px)) translateY(-7px) rotate(90deg); } }
-
-.langs { display: grid; gap: 5px; }
-.langs > span { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 15px; font-weight: 800; line-height: 1.3; }
-.langs em { font-style: normal; font-weight: 700; color: var(--muted); white-space: nowrap; }
-
-.fan { position: relative; display: block; height: 46px; }
-.fan .app-icon { --s: 44px; --g: 26px; position: absolute; transition: transform .6s var(--spring); transform: translateX(calc(var(--k) * var(--g))) rotate(calc((var(--k) - 1.5) * 7deg)); }
-.fan .app-icon:nth-child(1) { --k: 0; z-index: 4; }
-.fan .app-icon:nth-child(2) { --k: 1; z-index: 3; }
-.fan .app-icon:nth-child(3) { --k: 2; z-index: 2; }
-.fan .app-icon:nth-child(4) { --k: 3; }
-@media (hover: hover) { .t-apps:hover .fan .app-icon { transform: translateX(calc(var(--k) * var(--g) * 2)) translateY(-3px); } }
-
-/* About: the statement lights up word by word, then "I find out." gets underlined */
-.statement { isolation: isolate; margin-top: 18px; max-width: 1040px; font-size: var(--t-h1); line-height: 1.02; font-weight: 900; letter-spacing: -.045em; }
-.statement .w { position: relative; color: var(--faint); transition: color .35s ease; }
-.statement .w.lit { color: var(--ink); }
-.statement .mark .w.lit { color: var(--blue); }
-@media (min-width: 900px) { .statement .mark::before { content: ''; display: block; } }
-.statement .mark .w::after { content: ''; position: absolute; z-index: -1; left: -.06em; right: -.32em; bottom: .04em; height: .36em; background: var(--sky-soft); transform: scaleX(0); transform-origin: 0 50%; transition: transform .45s var(--out); transition-delay: calc(var(--k, 0) * .12s); }
-.statement .mark .w:first-child::after { border-radius: .18em 0 0 .18em; }
-.statement .mark .w:last-child::after { right: -.08em; border-radius: 0 .18em .18em 0; }
-.statement.done .mark .w::after { transform: none; }
-.about-lines { display: grid; grid-template-columns: 1.45fr 1fr 1fr; gap: 0 clamp(24px, 3.4vw, 48px); max-width: 1000px; margin-top: clamp(48px, 6vw, 80px); }
-.about-lines p { padding-top: 20px; border-top: 2px solid var(--ink); font-size: 19px; line-height: 1.45; font-weight: 700; letter-spacing: -.018em; }
+html.js .wcard.rv { transition: opacity .7s ease, transform .9s var(--out), translate .5s var(--spring), scale .5s var(--spring), box-shadow .4s; transition-delay: calc(var(--d, 0) * 80ms), calc(var(--d, 0) * 80ms), 0s, 0s, 0s; }
 
 /* Journey. Without JS: title + four chapters. Reduced motion: plus the whole route on a static map card. */
 .jr { position: relative; padding: clamp(88px, 12vw, 160px) 0; }
@@ -160,6 +110,23 @@ html.js .wcard.rv:not(.in) .waffle i.on { transform: scale(0); }
   .w-apps:hover li:nth-child(4) .app-icon { transition-delay: .12s; }
 }
 
+/* Business: the full-width third card, the two things she makes and sells */
+.w-biz { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-areas: 'head list' 'link list'; column-gap: clamp(32px, 5vw, 72px); }
+.biz-head { grid-area: head; }
+.w-biz .link { grid-area: link; align-self: end; }
+.biz-list { grid-area: list; align-self: center; list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.biz-list li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 18px; padding: 20px 24px 20px 20px; border-radius: var(--r-md); background: var(--snow); }
+.biz-list .app-icon { --s: 72px; transition: transform .6s var(--spring); }
+.biz-tag svg { width: 100%; height: 100%; }
+.biz-txt { hyphens: manual; -webkit-hyphens: manual; }
+.biz-txt b { display: block; font-size: 18px; font-weight: 900; letter-spacing: -.025em; color: var(--ink); }
+.biz-txt b + span { display: block; margin-top: 2px; text-wrap: pretty; font-size: 15px; line-height: 1.38; font-weight: 700; color: var(--muted); }
+.biz-when { align-self: start; padding-top: 2px; font-size: 14px; font-weight: 800; color: var(--peri); white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (hover: hover) {
+  .w-biz:hover li:first-child .app-icon { transform: translateY(-4px) rotate(-5deg); }
+  .w-biz:hover li:last-child .app-icon { transform: translateY(-4px) rotate(4deg); transition-delay: .05s; }
+}
+
 /* Experience */
 .xp-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 88px); align-items: start; }
 .xp-list { list-style: none; margin: clamp(32px, 4vw, 48px) 0 0; padding: 0; }
@@ -197,10 +164,6 @@ html.js .contact-card.rv:not(.in) .peek-c img { transform: translateY(80%); }
 
 /* Narrower screens */
 @media (min-width: 901px) { .xp-side { position: sticky; top: calc(var(--nav-h) + 32px); } }
-@media (max-width: 1080px) {
-  .tile { grid-template-columns: 1fr; grid-template-rows: none; min-height: 0; }
-  .tile .n { grid-row: auto; margin-bottom: 10px; font-size: 64px; }
-}
 @media (max-width: 900px) {
   .hero { padding-top: calc(var(--nav-h) + 28px); }
   .hero-grid { grid-template-columns: 1fr; gap: 8px; }
@@ -213,26 +176,16 @@ html.js .contact-card.rv:not(.in) .peek-c img { transform: translateY(80%); }
   :lang(de) .hello { font-size: 18px; padding: 5px 0 7px; }
   .hero-copy { margin-top: 18px; }
   .hero-title { margin-top: 22px; }
-  .about-lines { grid-template-columns: 1fr; gap: 24px; max-width: 560px; }
   .jr-chs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .work-grid, .xp-grid { grid-template-columns: 1fr; }
+  .w-biz { grid-template-columns: 1fr; grid-template-areas: 'head' 'list' 'link'; }
+  .biz-list { margin-top: 32px; }
 }
 @media (max-width: 640px) {
   .hero-title { font-size: clamp(38px, 11vw, 52px); margin-top: 20px; }
   .hero-lead { margin-top: 16px; font-size: 18px; }
   .hero-cta { margin-top: 22px; }
   .hero-cta .btn { padding: 0 20px; font-size: 16px; }
-  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .tile { padding: 18px 18px 20px; border-radius: 24px; }
-  .tile .n { font-size: 54px; margin-bottom: 8px; }
-  .tile .k { font-size: 17px; }
-  .tile .v { font-size: 14px; }
-  .t-lang, .t-forage { grid-column: span 2; grid-template-columns: auto 1fr; grid-template-rows: auto 1fr; column-gap: 20px; }
-  .t-lang .n, .t-forage .n { grid-row: 1 / 3; margin-bottom: 0; }
-  .fan .app-icon { --s: 38px; --g: 23px; }
-  .fan { height: 40px; }
-  .statement { font-size: clamp(40px, 12vw, 56px); }
-  .about-lines p { font-size: 18px; }
   .jr-chs { grid-template-columns: 1fr; }
   .jr.live .jr-ui { padding-top: calc(var(--nav-h) + 24px); padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
   .jr.live .jr-story { margin: auto 0 0; max-width: none; padding: 22px 22px 18px; border-radius: 26px; background: rgba(255, 255, 255, .86); -webkit-backdrop-filter: saturate(180%) blur(18px); backdrop-filter: saturate(180%) blur(18px); box-shadow: 0 0 0 1px rgba(35, 43, 61, .06), var(--shadow-2); }
@@ -248,6 +201,12 @@ html.js .contact-card.rv:not(.in) .peek-c img { transform: translateY(80%); }
   .fin-num span { grid-column: 1 / -1; margin-top: 0; }
   .app-list { grid-template-columns: 1fr; gap: 16px; }
   .app-list .app-icon { --s: 54px; }
+  .biz-list { margin-top: 28px; gap: 10px; }
+  .biz-list li { grid-template-columns: auto minmax(0, 1fr); column-gap: 14px; padding: 16px; }
+  .biz-list .app-icon { --s: 54px; grid-row: 1 / 3; align-self: start; }
+  .biz-when { grid-column: 2; grid-row: 1; padding-top: 0; font-size: 13px; }
+  .biz-txt { grid-column: 2; grid-row: 2; }
+  .biz-txt b + span { font-size: 14px; }
   .xp-list li { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
   .xp-list .when { padding-top: 0; }
   .side-block { padding: 22px 22px 24px; }
@@ -256,14 +215,12 @@ html.js .contact-card.rv:not(.in) .peek-c img { transform: translateY(80%); }
   .peek-c { width: 150px; margin-left: -75px; }
 }
 :lang(de) .hero-title { font-size: clamp(40px, 4.7vw, 70px); }
-:lang(de) .statement { font-size: clamp(38px, 5.6vw, 72px); }
 @media (max-width: 640px) {
   :lang(de) .hero-title { font-size: clamp(34px, 9.4vw, 46px); }
-  :lang(de) .statement { font-size: clamp(34px, 10vw, 48px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-in, .hero-art, .peek img, .polaroid.boop .peek img, html.js .t-route.in .mini-plane, html.js .t-route.in:hover .mini-plane, .jr-ring.now { animation: none; }
-  .polaroid, .hero-art::before, .tile, .wcard, .photo img, .peek img, .fan .app-icon, .app-list .app-icon, .statement .w, .statement .mark .w::after { transition: none; }
-  html.js .tile.rv:not(.in) .n, html.js .wcard.rv:not(.in) .waffle i.on, html.js .contact-card.rv:not(.in) .peek-c img { opacity: 1; transform: none; }
+  .hero-in, .hero-art, .peek img, .polaroid.boop .peek img, .jr-ring.now { animation: none; }
+  .polaroid, .hero-art::before, .wcard, .photo img, .peek img, .app-list .app-icon, .biz-list .app-icon { transition: none; }
+  html.js .wcard.rv:not(.in) .waffle i.on, html.js .contact-card.rv:not(.in) .peek-c img { opacity: 1; transform: none; }
 }

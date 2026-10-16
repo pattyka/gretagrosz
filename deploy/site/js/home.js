@@ -1,4 +1,4 @@
-// Homepage: the mascot hop, the About statement lighting up, the 83-in-100 waffle,
+// Homepage: the mascot hop, the 83-in-100 waffle,
 // and the flight UK → Hungary → Austria driven by the page scroll.
 ;(() => {
   const q = (s, el = document) => el.querySelector(s)
@@ -19,43 +19,6 @@
     polaroid.addEventListener('pointerdown', () => { polaroid.classList.remove('boop'); void polaroid.offsetWidth; polaroid.classList.add('boop') })
     polaroid.addEventListener('animationend', (e) => { if (e.animationName === 'boop') polaroid.classList.remove('boop') })
   }
-
-  /* About: one span per word, rebuilt in the current language, lit as it scrolls in */
-  const statement = q('#statement')
-  const parts = statement ? [...statement.children].map((el) => ({ en: el.textContent.replace(/\s+/g, ' ').trim(), hi: el.classList.contains('hi') })) : []
-  let words = [], lastLit = -1
-  if (statement) statement.setAttribute('data-no-i18n', '')
-  function buildStatement() {
-    if (!statement) return
-    statement.textContent = ''
-    words = []
-    parts.forEach((part, pi) => {
-      const holder = part.hi ? statement.appendChild(Object.assign(document.createElement('span'), { className: 'mark' })) : statement
-      const list = tr(part.en).split(/\s+/)
-      list.forEach((w, i) => {
-        const span = Object.assign(document.createElement('span'), { className: 'w', textContent: w })
-        span.setAttribute('aria-hidden', 'true')
-        if (part.hi) span.style.setProperty('--k', i)
-        holder.append(span, i < list.length - 1 ? ' ' : '')
-        words.push(span)
-      })
-      if (pi < parts.length - 1) statement.append(' ')
-    })
-    statement.setAttribute('aria-label', parts.map((p) => tr(p.en)).join(' '))
-    lastLit = -1
-    if (still) { words.forEach((w) => w.classList.add('lit')); statement.classList.add('done') }
-  }
-  function lightStatement() {
-    if (still || !statement) return
-    const r = statement.getBoundingClientRect(), vh = innerHeight
-    if (r.bottom < -vh || r.top > vh * 1.5) return
-    const lit = Math.round(sub(vh * 0.86 - r.top, 0, vh * 0.42) * words.length)
-    if (lit === lastLit) return
-    lastLit = lit
-    words.forEach((w, i) => w.classList.toggle('lit', i < lit))
-    statement.classList.toggle('done', lit >= words.length)
-  }
-  buildStatement()
 
   /* Finance card: 83 of every 100 */
   const waffle = q('.waffle')
@@ -249,14 +212,12 @@
 
   /* Language switch: rebuild what was built from strings, then reframe */
   document.addEventListener('langchange', () => {
-    buildStatement(); lightStatement()
     if (names) names.forEach((n, i) => (n.textContent = tr(STOPS[i].name)))
     if (journey && svg) { measure(); render() }
   })
 
   /* One scroll loop */
   function frame() {
-    lightStatement()
     if (journey && view) { const r = journey.getBoundingClientRect(); if (r.bottom > -50 && r.top < innerHeight + 50) render() }
   }
   let ticking = false, resizeRaf = 0

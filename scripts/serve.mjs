@@ -37,7 +37,6 @@ async function resolve(path) {
 createServer(async (req, res) => {
   const url = new URL(req.url, 'http://x')
   const path = decodeURIComponent(url.pathname)
-  if (path === '/business' || path === '/business/') { res.writeHead(301, { Location: '/' }); return res.end() }
   const r = await resolve(path)
   if (r?.redirect) { res.writeHead(301, { Location: r.redirect + url.search }); return res.end() }
   if (!r) { res.writeHead(404, { 'Content-Type': 'text/plain' }); return res.end('404') }

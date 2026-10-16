@@ -42,7 +42,7 @@ I18N.add({
   'Business & finance student (BHAK), Austria': 'Schülerin an einer BHAK in Österreich · Wirtschaft & Finanzen',
   'Looking for a banking internship (Pflichtpraktikum)': 'Auf der Suche nach einem Pflichtpraktikum im Bankwesen',
   'I study business and finance at a BHAK in Austria, in German. I grew up in England and Hungary. I learn by doing: I researched how Austria’s banks compete for Gen Z, turned it into an Excel tool, and designed and built four apps that are live.':
-    'Ich lerne Wirtschaft und Finanzen an einer BHAK in Österreich, auf Deutsch. Aufgewachsen bin ich in England und Ungarn. Ich lerne am besten durchs Tun: Ich habe analysiert, wie Österreichs Banken um die Gen Z werben, daraus ein Excel-Tool gebaut und vier Apps entworfen und entwickelt, die online sind.',
+    'Ich bin in England und Ungarn aufgewachsen und besuche jetzt eine BHAK in Österreich\u00a0– auf Deutsch. Ich lerne durchs Tun: Ich habe analysiert, wie Österreichs Banken um die Gen\u00a0Z werben, daraus ein Excel-Tool gebaut und vier Apps entwickelt, die online sind.',
 
   // Education
   'Education': 'Ausbildung',
@@ -60,23 +60,29 @@ I18N.add({
   'Experience': 'Berufserfahrung',
   'Virtual': 'Virtuell',
   'Forage Virtual Experience Programmes': 'Forage Virtual Experience Programme',
-  'Quantitative Research: hands-on tasks in financial analysis.': 'Quantitative Research: praktische Aufgaben in der Finanzanalyse.',
-  'Financial Services: a banking simulation and banking processes.': 'Financial Services: Banksimulation und Bankprozesse.',
+  'Quantitative Research: hands-on financial analysis.': 'Quantitative Research: praktische Finanzanalyse.',
+  'Financial Services: banking simulation and processes.': 'Financial Services: Banksimulation und Bankprozesse.',
   'Ongoing': 'Laufend',
   'English tutor': 'Englisch-Nachhilfe',
-  'For classmates': 'Für Mitschüler/innen',
-  'Grammar and vocabulary.': 'Grammatik und Vokabeln.',
+  'For classmates: grammar and vocabulary.': 'Für Mitschüler/innen: Grammatik und Vokabeln.',
   'June 2025': 'Juni 2025',
   'Research support': 'Unterstützung in der Forschung',
   'Research and lab work, data entry and documentation.': 'Forschung und Laborarbeit, Dateneingabe und Dokumentation.',
   'Summer 2024': 'Sommer 2024',
   'Summer job': 'Ferialjob',
   'Running the till, selling ice cream, preparing fast food.': 'Kassa, Eisverkauf und Zubereitung von Fast Food.',
-  'Every summer': 'Jeden Sommer',
+  'Every summer, one week': 'Jeden Sommer eine Woche',
   'Volunteer': 'Ehrenamtliche Betreuerin',
   'Children’s summer camp': 'Sommercamp für Kinder',
-  'One week each summer: looking after children, group activities, organising the day.':
-    'Jeden Sommer eine Woche: Kinderbetreuung, Gruppenaktivitäten und Organisation des Tagesablaufs.',
+  'Looking after children, group activities, organising the day.': 'Kinderbetreuung, Gruppenaktivitäten, Tagesablauf organisieren.',
+
+  // Own business (rows inside Experience)
+  'Weekend Ink': 'Weekend Ink',
+  'My own small business': 'Eigenes Kleinunternehmen',
+  'Custom temporary tattoos I design for festivals, events and teams, sold at events.':
+    'Temporäre Tattoos, individuell von mir gestaltet, für Festivals, Events und Teams; Verkauf direkt vor Ort.',
+  'Clothing, sold online': 'Kleidung, online verkauft',
+  'I sew or pick out each piece, then photograph, list and ship it on time.': 'Selbst genäht oder ausgesucht; Fotos, Inserate und pünktlicher Versand.',
 
   // Projects
   'Projects': 'Projekte',

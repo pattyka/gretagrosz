@@ -116,25 +116,33 @@ p { margin: 0; text-wrap: pretty; }
 
 /* ---------- Navigation: a floating glass pill ---------- */
 .nav { position: fixed; z-index: 50; top: 12px; left: 50%; transform: translateX(-50%); width: min(calc(100% - 24px), 760px); height: 52px; display: flex; align-items: center; gap: 4px; padding: 0 6px 0 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.72); -webkit-backdrop-filter: saturate(180%) blur(22px); backdrop-filter: saturate(180%) blur(22px); box-shadow: 0 0 0 1px rgba(35, 43, 61, 0.07), 0 10px 30px -14px rgba(35, 43, 61, 0.35); transition: box-shadow 0.3s, background 0.3s; }
-.nav .me { display: inline-flex; align-items: center; gap: 9px; height: 40px; padding: 0 12px 0 6px; border-radius: 999px; font-size: 17px; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
+.nav .me { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 15px 0 5px; border-radius: 999px; font-size: 15px; font-weight: 800; letter-spacing: -0.01em; color: var(--muted); white-space: nowrap; transition: color 0.2s, background 0.2s; }
+.nav .me .last { display: none; }
 .nav .me .logo { width: 28px; height: 28px; transition: transform 0.6s var(--spring); }
-.nav .me:hover .logo { transform: rotate(-180deg); }
-.nav .links { display: flex; gap: 2px; margin: 0 auto; }
+.nav .me[aria-current='page'] { color: var(--ink); background: var(--cloud); }
+.nav .links { display: flex; gap: 2px; margin: 0 auto 0 0; }
 .nav .links a { position: relative; display: inline-flex; align-items: center; height: 38px; padding: 0 15px; border-radius: 999px; font-size: 15px; font-weight: 800; color: var(--muted); transition: color 0.2s, background 0.2s; white-space: nowrap; }
-.nav .links a:hover { color: var(--ink); background: rgba(35, 43, 61, 0.05); }
 .nav .links a[aria-current='page'] { color: var(--ink); background: var(--cloud); }
+@media (hover: hover) {
+  .nav .me:hover .logo { transform: rotate(-180deg); }
+  .nav .me:not([aria-current='page']):hover { color: var(--ink); background: rgba(35, 43, 61, 0.05); }
+  .nav .links a:not([aria-current='page']):hover { color: var(--ink); background: rgba(35, 43, 61, 0.05); }
+}
 .lang { display: inline-flex; padding: 3px; border-radius: 999px; background: var(--cloud); flex: none; }
 .lang button { height: 32px; min-width: 38px; padding: 0 10px; border: 0; border-radius: 999px; background: none; font-size: 13px; font-weight: 900; letter-spacing: 0.02em; color: var(--muted); cursor: pointer; transition: background 0.25s, color 0.25s, box-shadow 0.25s; }
 .lang button[aria-pressed='true'] { background: var(--white); color: var(--ink); box-shadow: 0 1px 3px rgba(35, 43, 61, 0.16); }
+/* Phones: "Greta" stays a visible, named first item; the language switch shrinks to one button showing the other language */
 @media (max-width: 640px) {
-  .nav { height: 50px; padding: 0 5px 0 6px; }
-  .nav .me .name { display: none; }
-  .nav .me { padding: 0 6px; }
-  .nav .links { margin: 0 auto 0 0; }
-  .nav .links a { padding: 0 11px; font-size: 14px; }
-  .lang button { min-width: 34px; padding: 0 8px; }
+  .nav { height: 50px; padding: 0 5px; gap: 2px; }
+  .nav .me { gap: 0; padding: 0 12px; font-size: 15px; }
+  .nav .me .logo, .nav .me .last { display: none; }
+  .nav .links { margin: 0 auto 0 0; gap: 0; }
+  .nav .links a { padding: 0 10px; font-size: 15px; }
+  .lang { padding: 0; background: none; }
+  .lang button[aria-pressed='true'] { display: none; }
+  .lang button { height: 38px; min-width: 42px; background: var(--cloud); color: var(--ink); }
 }
-@media (max-width: 360px) { .nav .links a { padding: 0 8px; } }
+@media (max-width: 370px) { .nav .me { padding: 0 9px; } .nav .links a { padding: 0 8px; font-size: 14px; } }
 
 /* ---------- Footer ---------- */
 .foot { padding: 56px 0 calc(40px + env(safe-area-inset-bottom)); background: var(--snow); color: var(--muted); font-size: 15px; font-weight: 700; }
@@ -162,7 +170,6 @@ html.js .rv.in { opacity: 1; transform: none; }
   html.js .rv { opacity: 1 !important; transform: none !important; }
   body { color: #000; }
 }
-@media (max-width: 640px) { .nav .links .home-link { display: none; } }
 
 /* ---------- Scene: the box every app demo animation lives in (scenes/<name>.js mounts into it) ----------
    Fixed 5:4 at every width, so scenes lay out in cqw/cqh and never measure. Scenes style their own inside. */

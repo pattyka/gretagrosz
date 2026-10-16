@@ -1,0 +1,61 @@
+/* Weekend Ink, in the logo's colours. Geometry in cqw. */
+.sc-weekendink { --wi-ink:#2B3652;--wi-sun:#FFD15C;--wi-sky:#8DB1E4;--wi-crease:rgba(150,86,52,.26);background:radial-gradient(120% 95% at 28% 18%,#EEF1F6,#D6DDE8);color:var(--wi-ink);cursor:pointer;font-family:var(--font) }
+@media (prefers-reduced-motion: reduce) { .sc-weekendink { cursor:default; } }
+.sc-weekendink * { box-sizing:border-box;hyphens:manual;-webkit-hyphens:manual }
+.sc-weekendink .wi-all { position:absolute;inset:0 }
+.sc-weekendink .wi-all i { position:absolute;display:block }
+.sc-weekendink .wi-all > *, .sc-weekendink .wi-mv, .sc-weekendink .wi-hero > i, .sc-weekendink .wi-cell > .wi-sun, .sc-weekendink .wi-band, .sc-weekendink .wi-tat, .sc-weekendink .wi-vf, .sc-weekendink .wi-day > span { position:absolute;will-change:transform,opacity }
+
+/* The design, in em (font-size = box size) */
+.sc-weekendink .wi-sun { position:absolute;width:1em;height:1em }
+.sc-weekendink .wi-r { left:.465em;top:.42em;width:.07em;height:.16em;border-radius:.035em;background:var(--wi-ink);transform:rotate(var(--a)) translateY(-.38em) scaleY(var(--k)) }
+.sc-weekendink .wi-face { left:.22em;top:.22em;width:.56em;height:.56em;border-radius:50%;background:var(--wi-sun);box-shadow:inset 0 0 0 .045em var(--wi-ink) }
+.sc-weekendink .wi-ck { left:.07em;top:.35em;width:.08em;height:.05em;border-radius:50%;background:#F59A7F }
+.sc-weekendink .wi-ck.r { left:.41em }
+.sc-weekendink .wi-sm { left:.18em;top:.34em;width:.2em;height:.1em;border:.04em solid var(--wi-ink);border-top:0;border-radius:0 0 .12em .12em }
+.sc-weekendink .wi-gl { left:.255em;top:.355em;width:.49em;height:.15em }
+.sc-weekendink .wi-gl::before { content:'';position:absolute;left:.18em;top:.03em;width:.13em;height:.035em;background:var(--wi-ink) }
+.sc-weekendink .wi-gl i { top:0;width:.2em;height:.15em;border-radius:.04em .04em .09em .09em;background:var(--wi-ink) }
+.sc-weekendink .wi-gl i + i { left:.29em }
+.sc-weekendink .wi-gl i::after { content:'';position:absolute;left:.04em;top:.03em;width:.05em;height:.025em;border-radius:.02em;background:rgba(255,255,255,.75) }
+.sc-weekendink .wi-pad > .wi-sun { font-size:.889em;left:.0555em;top:.0555em }
+.sc-weekendink .wi-ghost { opacity:.13;transform:scaleX(-1) }
+.sc-weekendink .back .wi-ghost { transform:none }
+.sc-weekendink .wi-pp { position:absolute;left:0;top:0;width:1em;height:1em;border-radius:.16em;background:#fff }
+
+.sc-weekendink .wi-sheet { left:18cqw;top:20cqw;width:64cqw;height:44cqw;border-radius:3.6cqw;background:#fff;box-shadow:0 2.4cqw 6cqw -1cqw rgba(43,54,82,.2) }
+.sc-weekendink .wi-cell { position:absolute;width:1em;height:1em;font-size:16cqw }
+.sc-weekendink .wi-cut { inset:0;border-radius:.16em;border:.22cqw dashed #C3CCDA }
+.sc-weekendink .wi-hero { left:17cqw;top:7cqw;font-size:30cqw }
+.sc-weekendink .wi-fly { left:20cqw;top:22cqw;width:20cqw;height:20cqw;font-size:20cqw }
+.sc-weekendink .wi-fly .wi-pp { box-shadow:0 2cqw 4cqw -1cqw rgba(43,54,82,.32) }
+
+/* A plain raised fist */
+.sc-weekendink .wi-arm { left:31cqw;top:10cqw;width:38cqw;height:90cqw;transform-origin:50% 100%;--skin:#EFC09B }
+.sc-weekendink .wi-arm.l { --skin:#C88A60;--wi-band:var(--wi-sun) }
+.sc-weekendink .wi-arm.r { --skin:#F5D6BB;--wi-band:#F2A28E }
+.sc-weekendink .wi-fa { left:4cqw;top:22cqw;width:30cqw;height:72cqw;border-radius:15cqw 15cqw 0 0;background:linear-gradient(90deg,rgba(120,60,30,.07),transparent 28% 72%,rgba(120,60,30,.1)),var(--skin) }
+.sc-weekendink .wi-fist { left:0;top:0;width:38cqw;height:30cqw;border-radius:14cqw 14cqw 12cqw 12cqw;background:var(--skin) }
+.sc-weekendink .wi-kn { left:10cqw;top:2.4cqw;width:.6cqw;height:6cqw;border-radius:.3cqw;background:var(--wi-crease);box-shadow:9cqw 0 var(--wi-crease),18cqw 0 var(--wi-crease) }
+.sc-weekendink .wi-th { left:0;top:15cqw;width:26cqw;height:6cqw;border-radius:0 5cqw 0 0;box-shadow:inset -.6cqw .6cqw var(--wi-crease) }
+.sc-weekendink .wi-band { left:3.4cqw;top:31cqw;width:31.2cqw;height:6cqw;border-radius:1.6cqw;background:repeating-linear-gradient(90deg,transparent 0 2.2cqw,rgba(255,255,255,.28) 2.2cqw 3cqw),var(--wi-band,var(--wi-sky));box-shadow:0 .5cqw .8cqw -.3cqw rgba(43,54,82,.35) }
+.sc-weekendink .wi-band::after { content:'';position:absolute;right:4cqw;top:-.6cqw;width:4.4cqw;height:7.2cqw;border-radius:1cqw;background:var(--wi-ink) }
+.sc-weekendink .wi-spot { position:absolute;left:9cqw;top:40cqw;width:1em;height:1em;font-size:20cqw }
+.sc-weekendink .wi-tat { inset:0 }
+
+/* Peel frame: x runs to the top-right corner */
+.sc-weekendink .wi-pf { position:absolute;left:.5em;top:.5em;transform:rotate(-45deg) }
+.sc-weekendink .wi-clip { position:absolute;left:0;top:-1em;width:2em;height:2em;overflow:hidden;will-change:transform }
+.sc-weekendink .wi-in { position:absolute;left:0;top:1em;will-change:transform }
+.sc-weekendink .wi-in > .wi-pp { left:-.5em;top:-.5em;transform:rotate(45deg) }
+.sc-weekendink .wi-flap { background:radial-gradient(140% 140% at 100% 0,#F4F6FA,#E3E8F0 45%,#BCC6D5 95%);box-shadow:-.04em .06em .1em rgba(43,54,82,.3) }
+.sc-weekendink .wi-vf { left:-.22em;top:-.22em;width:1.44em;height:1.44em;overflow:visible;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 .1cqw .3cqw rgba(43,54,82,.3)) }
+
+.sc-weekendink .wi-bunt { left:0;top:0;width:100cqw;height:18cqw;transform-origin:50% 0 }
+.sc-weekendink .wi-bunt svg { display:block;width:100%;height:100%;overflow:visible }
+.sc-weekendink .wi-day { left:4.4cqw;top:4.4cqw;display:grid;justify-items:center;align-items:center;height:7cqw;padding:0 3cqw;border-radius:3.5cqw;overflow:hidden;background:rgba(255,255,255,.9);box-shadow:0 .3cqw 1.2cqw rgba(43,54,82,.12);font-size:3.3cqw;font-weight:800;line-height:1;white-space:nowrap }
+.sc-weekendink .wi-day > span { position:static;grid-area:1 / 1 }
+.sc-weekendink .wi-tag { left:58cqw;top:34cqw;max-width:37cqw;filter:drop-shadow(0 1.2cqw 2cqw rgba(43,54,82,.2)) }
+.sc-weekendink .wi-tagp { position:relative;padding:3.2cqw 3.6cqw 3.6cqw;border-radius:2.6cqw;background:#fff;font:700 7cqw/.95 var(--hand);text-wrap:balance;clip-path:polygon(0 0,100% 0,100% calc(100% - 5cqw),calc(100% - 5cqw) 100%,0 100%) }
+.sc-weekendink .wi-tagp::after { content:'';position:absolute;right:0;bottom:0;width:5cqw;height:5cqw;background:linear-gradient(135deg,#E3E8EF,#F7F9FB 60%);clip-path:polygon(0 0,100% 0,0 100%) }
+.sc-weekendink .wi-flash { inset:0;background:#fff;pointer-events:none }
