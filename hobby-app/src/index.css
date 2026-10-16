@@ -7,7 +7,7 @@
   --ink: 17 17 17;
   --mist: 239 239 239;
   --card: 255 255 255;
-  --spark-light: 254 233 229;
+  --spark-light: 255 226 213;
   --shadow-soft: 0 1px 20px rgba(0, 0, 0, 0.08);
   --shadow-pop: 0 8px 40px rgba(0, 0, 0, 0.18);
   color-scheme: light;
@@ -17,7 +17,7 @@
     --ink: 236 236 240;
     --mist: 40 40 46;
     --card: 22 22 26;
-    --spark-light: 92 40 33;
+    --spark-light: 84 46 36;
     --shadow-soft: 0 1px 20px rgba(0, 0, 0, 0.5);
     --shadow-pop: 0 8px 40px rgba(0, 0, 0, 0.7);
     color-scheme: dark;
@@ -27,7 +27,7 @@
   --ink: 236 236 240;
   --mist: 40 40 46;
   --card: 22 22 26;
-  --spark-light: 92 40 33;
+  --spark-light: 84 46 36;
   --shadow-soft: 0 1px 20px rgba(0, 0, 0, 0.5);
   --shadow-pop: 0 8px 40px rgba(0, 0, 0, 0.7);
   color-scheme: dark;

@@ -12,7 +12,7 @@ export default {
         ink: 'rgb(var(--ink) / <alpha-value>)',
         mist: 'rgb(var(--mist) / <alpha-value>)',
         card: 'rgb(var(--card) / <alpha-value>)',
-        spark: { light: 'rgb(var(--spark-light) / <alpha-value>)', DEFAULT: '#F4644F', dark: '#DB4E3A' },
+        spark: { light: 'rgb(var(--spark-light) / <alpha-value>)', DEFAULT: '#DD8670', dark: '#C46F5A' },
       },
       boxShadow: {
         soft: 'var(--shadow-soft)',

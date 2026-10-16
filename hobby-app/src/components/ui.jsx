@@ -254,7 +254,7 @@ export function ResourceList({ resources, className = 'bg-card' }) {
 }
 
 // A short burst of confetti, e.g. when a step is ticked off
-const CONFETTI_COLORS = ['#F4644F', '#F59E0B', '#10B981', '#EC4899', '#3B82F6']
+const CONFETTI_COLORS = ['#DD8670', '#F59E0B', '#10B981', '#EC4899', '#3B82F6']
 export function Confetti() {
   const pieces = Array.from({ length: 28 }, (_, i) => ({
     left: `${(i * 37) % 100}%`,
