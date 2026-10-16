@@ -4,204 +4,170 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Apps · Greta Grosz</title>
-<meta name="description" content="Four apps by Greta Grosz: Deca, BW Buddy, Blank and QED." />
+<meta name="description" content="Four apps Greta Grosz designed and built: Deca, BW Buddy, Blank and QED. All live." />
 <meta property="og:title" content="Apps · Greta Grosz" />
-<meta property="og:description" content="Business and finance student in Austria with roots in the UK and Hungary. Building apps and exploring business ventures." />
+<meta property="og:description" content="Four apps Greta Grosz designed and built: Deca, BW Buddy, Blank and QED. All live." />
 <meta property="og:url" content="https://gretagrosz.com/apps/" />
-<meta name="theme-color" content="#F4F6F9" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#FFFFFF" />
 <meta name="color-scheme" content="light" />
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
 <link rel="apple-touch-icon" href="/img/favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/site.css" />
+<link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/apps.css" />
 <script>
-  // Hide the page for a moment if it will be shown in German, so English doesn't flash first
-  try { var lang = localStorage.getItem('lang') } catch (e) {}
-  if (lang === 'de' || (lang !== 'en' && (navigator.languages || [navigator.language]).some(function (l) { return /^de\b/i.test(l) }))) document.documentElement.classList.add('i18n-wait')
+  // Hide the page for a moment if it will be shown in German, so English never flashes first
+  try { var l = localStorage.getItem('lang') } catch (e) {}
+  if (l === 'de' || (l !== 'en' && (navigator.languages || [navigator.language]).some(function (x) { return /^de\b/i.test(x) }))) document.documentElement.classList.add('i18n-wait')
 </script>
 </head>
 <body>
 
 <nav class="nav" aria-label="Main">
-  <div class="wrap">
-    <a class="name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
-    <div class="links">
-      <a href="/finance/">Finance</a>
-      <a href="/apps/">Apps</a>
-      <a href="/business/">Business</a>
-      <a href="/#contact">Contact</a>
-    </div>
-    <div class="nav-tools">
-      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
-    <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16" /></svg>
-    </button>
-    </div>
-  </div>
+  <a class="me" href="/" aria-label="Greta Grosz, home"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="30" fill="#232B3D"/><g transform="translate(16 16) scale(.68)" fill="none" stroke="#D9E0EA" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></g></svg><span class="name">Greta Grosz</span></a>
+  <div class="links"><a href="/" class="home-link">Home</a><a href="/finance/">Finance</a><a href="/apps/" aria-current="page">Apps</a><a href="/cv/">CV</a></div>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button></div>
 </nav>
 
-<aside class="sidebar" id="sidebar" aria-label="Site">
-  <a class="sb-name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
-  <p class="sb-role">Business &amp; finance student (HAK), Austria</p>
-  <p class="sb-status">Looking for a banking internship</p>
-  <nav class="sb-links sb-pages" aria-label="Pages">
-    <a href="/">Home</a>
-    <a href="/finance/">Finance work</a>
-    <a href="/apps/" class="current" aria-current="page">Apps</a>
-    <a href="/business/">Business</a>
-  </nav>
-  <p class="sb-group">On this page</p>
-  <nav class="sb-links sb-sections" aria-label="On this page">
-    <a href="#top" data-section="top">Overview</a>
-    <a href="#tenaday" data-section="tenaday">Deca</a>
-    <a href="#bwbuddy" data-section="bwbuddy">BW Buddy</a>
-    <a href="#blank" data-section="blank">Blank</a>
-    <a href="#regional" data-section="regional">QED</a>
-  </nav>
-  <div class="sb-foot">
-    <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
-    <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="/files/Marktanalyse_Gen_Z_und_oesterreichische_Banken.pdf">Market research (PDF)</a>
-  </div>
-</aside>
-<div class="scrim" id="scrim"></div>
-
-<header class="page-intro" id="top">
+<main id="main">
+<header class="apps-hero">
   <div class="wrap">
-    <h1 class="fade">My apps</h1>
-    <p class="fade">Each one solves a small problem from school or everyday life. All four are live, and you can open them right here.</p>
+    <h1 class="rv">My apps</h1>
+    <p class="lead rv" style="--d:1">Each one solves a small problem from school or everyday life. All four are live, and you can open them right here.</p>
+  </div>
+  <div class="shelf-stage">
+    <span class="peek" aria-hidden="true"><img src="/img/mascot.webp" alt="" width="416" height="261" /></span>
+    <nav class="shelf" aria-label="The four apps">
+      <a href="#deca" style="--i:0"><span class="app-icon"><img src="/img/icon-ten.png" alt="" width="240" height="240" /></span><span class="nm">Deca</span></a>
+      <a href="#bwbuddy" style="--i:1"><span class="app-icon"><img src="/img/icon-bw.png" alt="" width="240" height="240" /></span><span class="nm">BW Buddy</span></a>
+      <a href="#blank" style="--i:2"><span class="app-icon"><img src="/img/icon-blank.png" alt="" width="240" height="240" /></span><span class="nm">Blank</span></a>
+      <a href="#qed" style="--i:3"><span class="app-icon"><img src="/img/icon-qed.png" alt="" width="240" height="240" /></span><span class="nm">QED</span></a>
+    </nav>
   </div>
 </header>
 
-<!-- Deca -->
-<section class="show" id="tenaday">
+<div class="stack">
+<span class="anchor" id="deca"></span>
+<section data-app="deca" class="app" aria-labelledby="deca-h">
+  <div class="app-card rv">
+    <div class="app-text">
+      <div class="app-id"><span class="app-icon"><img src="/img/icon-ten.png" alt="" width="240" height="240" loading="lazy" /></span><div><b>Deca</b><span>Vocabulary</span></div></div>
+      <h2 id="deca-h">Ten words a day.</h2>
+      <p class="lead">Ten words a day, that is 3,650 words a year. Just stick to it.</p>
+      <p class="more">Learn them with flashcards, then pass a short typed test. Every day you keep your streak, your colour gets a little darker.</p>
+      <dl class="facts">
+        <div><dt>Languages</dt><dd>5</dd><dd>any to any</dd></div>
+        <div><dt>Test</dt><dd>8/10</dd><dd>to keep the streak</dd></div>
+        <div><dt>Colours</dt><dd>9</dd><dd>one every 30 days</dd></div>
+      </dl>
+      <a class="btn" href="/tenaday/">Open Deca</a>
+    </div>
+    <div class="app-demo"><div class="scene" data-scene="deca"></div></div>
+  </div>
+</section>
+
+<span class="anchor" id="bwbuddy"></span>
+<section data-app="bwbuddy" class="app flip" aria-labelledby="bw-h">
+  <div class="app-card rv">
+    <div class="app-text">
+      <div class="app-id"><span class="app-icon"><img src="/img/icon-bw.png" alt="" width="240" height="240" loading="lazy" /></span><div><b>BW Buddy</b><span>Business studies</span></div></div>
+      <h2 id="bw-h">Business studies, made into a game.</h2>
+      <p class="lead">A fun, gamified way to learn Betriebswirtschaft.</p>
+      <p class="more">The HAK syllabus as lessons, flashcards and quizzes, with a calendar for test dates. Every bit of XP grows Loopy’s market stall into a candy empire.</p>
+      <dl class="facts">
+        <div><dt>School years</dt><dd>1–3</dd><dd>HAK syllabus</dd></div>
+        <div><dt>Shop</dt><dd>8 stages</dd><dd>grows with XP</dd></div>
+        <div><dt>Tests</dt><dd>Calendar</dd><dd>with countdown</dd></div>
+      </dl>
+      <a class="btn" href="/bwbuddy/">Open BW Buddy</a>
+    </div>
+    <div class="app-demo"><div class="scene" data-scene="bwbuddy"></div></div>
+  </div>
+</section>
+
+<span class="anchor" id="blank"></span>
+<section data-app="blank" class="app" aria-labelledby="blank-h">
+  <div class="app-card rv">
+    <div class="app-text">
+      <div class="app-id"><span class="app-icon"><img src="/img/icon-blank.png" alt="" width="240" height="240" loading="lazy" /></span><div><b>Blank</b><span>Projects</span></div></div>
+      <h2 id="blank-h">Arrive blank. Leave with a project.</h2>
+      <p class="lead">You visit Blank feeling blank and leave knowing exactly which project you want to start next.</p>
+      <p class="more">See what others are making, start the same thing from a step-by-step beginner plan, and share it once it is finished.</p>
+      <dl class="facts">
+        <div><dt>Hobbies</dt><dd>11</dd><dd>areas to pick</dd></div>
+        <div><dt>Challenges</dt><dd>Monthly</dd><dd>win buddy outfits</dd></div>
+        <div><dt>Plans</dt><dd>Step by step</dd><dd>for beginners</dd></div>
+      </dl>
+      <a class="btn" href="/blank/">Open Blank</a>
+    </div>
+    <div class="app-demo"><div class="scene" data-scene="blank"></div></div>
+  </div>
+</section>
+
+<span class="anchor" id="qed"></span>
+<section data-app="qed" class="app flip" aria-labelledby="qed-h">
+  <div class="app-card rv">
+    <div class="app-text">
+      <div class="app-id"><span class="app-icon"><img src="/img/icon-qed.png" alt="" width="240" height="240" loading="lazy" /></span><div><b>QED</b><span>Olympiad maths</span></div></div>
+      <h2 id="qed-h">The maths that shows you the path.</h2>
+      <p class="lead">It shows you the path when you don’t know where to start, and gives you the structure to learn real problem solving, one proof at a time.</p>
+      <p class="more">A 150-day plan to the regional round of the Austrian Mathematical Olympiad, with real past papers and an AI coach that marks a photo of a handwritten proof out of 8.</p>
+      <dl class="facts">
+        <div><dt>Plan</dt><dd>150 days</dd><dd>to the regional round</dd></div>
+        <div><dt>Past papers</dt><dd>24</dd><dd>under exam timing</dd></div>
+        <div><dt>AI marking</dt><dd>0–8</dd><dd>points per proof</dd></div>
+      </dl>
+      <a class="btn" href="/regional/">Open QED</a>
+    </div>
+    <div class="app-demo"><div class="scene" data-scene="qed"></div></div>
+  </div>
+</section>
+</div>
+
+<section class="apps-end" aria-labelledby="end-h">
   <div class="wrap">
-    <div class="show-head fade"><span class="icon i-ten"><img src="/img/icon-ten.png" alt="" /></span><b>Deca</b></div>
-    <h2 class="fade">Ten words a day.</h2>
-    <p class="lead fade">Ten words a day, that is 3,650 words a year. Just stick to it.</p>
-    <div class="actions fade"><a class="button" href="/tenaday/">Open Deca</a></div>
-    <div class="stage" data-demo="ten">
-      <div class="counter"><span id="ten-count">0</span> of 10</div>
-      <div class="deck">
-        <div class="fc" data-dir="1"><small>English</small><strong>the house</strong><em>das Haus</em><div class="tint">Got it</div></div>
-        <div class="fc" data-dir="-1"><small>English</small><strong>the apple</strong><em>der Apfel</em><div class="tint">Again</div></div>
-        <div class="fc" data-dir="1"><small>English</small><strong>thank you</strong><em>danke</em><div class="tint">Got it</div></div>
-        <div class="fc" data-dir="1"><small>English</small><strong>hello</strong><em>hallo</em><div class="tint">Got it</div></div>
+    <h2 id="end-h" class="rv">More of my work.</h2>
+    <div class="end-grid">
+      <a class="end-card finance rv" style="--d:1" href="/finance/">
+        <span class="eyebrow">Finance</span>
+        <h3>How Austria’s banks compete for Gen Z</h3>
+        <p>My market research, and an Excel tool that recommends a youth account by weighted score.</p>
+        <span class="link">See my finance work</span>
+      </a>
+      <div class="end-card contact rv" style="--d:2">
+        <span class="status">Looking for a banking internship</span>
+        <h3>I want to do my Pflichtpraktikum at a bank.</h3>
+        <div class="end-btns" data-contact></div>
       </div>
-      <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     </div>
   </div>
 </section>
 
-<!-- BW Buddy -->
-<section class="show" id="bwbuddy">
-  <div class="wrap">
-    <div class="show-head fade"><span class="icon i-bw"><img src="/img/icon-bw.png" alt="" /></span><b>BW Buddy</b></div>
-    <h2 class="fade">Business studies, made into a game.</h2>
-    <p class="lead fade">A fun, gamified way to learn Betriebswirtschaft.</p>
-    <div class="actions fade"><a class="button" href="/bwbuddy/">Open BW Buddy</a></div>
-    <div class="stage" data-demo="quiz">
-      <div class="quiz">
-        <div class="top"><span>Quiz · Finanzierung</span><span>Frage <span id="q-num">3</span> von 10</span></div>
-        <div class="bar"><i id="q-bar"></i></div>
-        <h4>Was bedeutet Liquidität?</h4>
-        <div class="opt"><span class="mark"></span>Der Gewinn eines Geschäftsjahres</div>
-        <div class="opt" id="q-right"><span class="mark">✓</span>Zahlungen fristgerecht leisten zu können</div>
-        <div class="opt"><span class="mark"></span>Das Eigenkapital eines Unternehmens</div>
-        <div class="opt"><span class="mark"></span>Der Umsatz pro Monat</div>
-      </div>
-      <div class="toast" id="q-toast">Richtig! Weiter so.</div>
-    </div>
-  </div>
-</section>
+<nav class="dock" aria-label="Apps on this page" hidden>
+  <a href="#deca" aria-label="Deca"><span class="app-icon"><img src="/img/icon-ten.png" alt="" width="240" height="240" loading="lazy" /></span></a>
+  <a href="#bwbuddy" aria-label="BW Buddy"><span class="app-icon"><img src="/img/icon-bw.png" alt="" width="240" height="240" loading="lazy" /></span></a>
+  <a href="#blank" aria-label="Blank"><span class="app-icon"><img src="/img/icon-blank.png" alt="" width="240" height="240" loading="lazy" /></span></a>
+  <a href="#qed" aria-label="QED"><span class="app-icon"><img src="/img/icon-qed.png" alt="" width="240" height="240" loading="lazy" /></span></a>
+</nav>
+</main>
 
-<!-- Blank -->
-<section class="show" id="blank">
+<footer class="foot">
   <div class="wrap">
-    <div class="show-head fade"><span class="icon i-blank"><img src="/img/icon-blank.png" alt="" /></span><b>Blank</b></div>
-    <h2 class="fade">Arrive blank. Leave with a project.</h2>
-    <p class="lead fade">You visit Blank feeling blank and leave knowing exactly which project you want to start next.</p>
-    <div class="actions fade"><a class="button" href="/blank/">Open Blank</a></div>
-    <img class="mascot mascot-coral" src="/img/mascot-coral.png" alt="Blank’s little mascot peeking over the edge" width="520" height="335" />
-    <div class="stage" data-demo="feed">
-      <div class="feed" id="feed">
-        <div class="col">
-          <div class="tile art" style="height: 230px"><img src="/img/mascot-sourdough.png" alt="The mascot peeking over a sourdough loaf" /><b>First sourdough loaf</b><span>Baking · day 12</span></div>
-          <div class="tile" style="height: 150px; background: linear-gradient(160deg, #B4BFD0, #6F7E9C)"><b>Birdhouse from scrap wood</b><span>Woodwork</span></div>
-          <div class="tile" style="height: 230px; background: linear-gradient(160deg, #66748F, #262E40)"><b>Night sky in watercolour</b><span>Painting</span></div>
-          <div class="tile" style="height: 170px; background: linear-gradient(160deg, #A0ADC3, #5E6A84)"><b>Knitted scarf</b><span>Knitting · finished</span></div>
-        </div>
-        <div class="col" style="margin-top: 60px">
-          <div class="tile" style="height: 180px; background: linear-gradient(160deg, #C3CCD9, #6F7E9C)"><b>Pottery bowl, attempt 3</b><span>Ceramics</span></div>
-          <div class="tile art" id="liked" style="height: 250px"><span class="likes" id="like-count">23</span><span class="heart" id="heart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span><img src="/img/mascot-guitar.png" alt="The mascot playing guitar" /><b>My first song on guitar</b><span>Music · day 30</span></div>
-          <div class="tile" style="height: 160px; background: linear-gradient(160deg, #96A4BC, #34405A)"><b>Hand-bound notebook</b><span>Crafts</span></div>
-          <div class="tile" style="height: 200px; background: linear-gradient(160deg, #AAB6C9, #5E6A84)"><b>Balcony herb garden</b><span>Gardening</span></div>
-        </div>
-        <div class="col" style="margin-top: 20px">
-          <div class="tile" style="height: 160px; background: linear-gradient(160deg, #8C9BB5, #262E40)"><b>Lego city skyline</b><span>Building</span></div>
-          <div class="tile art" style="height: 230px"><img src="/img/mascot-camera.png" alt="The mascot peeking over a film camera" /><b>Film photos of Vienna</b><span>Photography</span></div>
-          <div class="tile" style="height: 180px; background: linear-gradient(160deg, #7D8CA8, #34405A)"><b>Crochet frog</b><span>Crochet · finished</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QED -->
-<section class="show" id="regional">
-  <div class="wrap">
-    <div class="show-head fade"><span class="icon i-qed"><img src="/img/icon-qed.png" alt="" /></span><b>QED</b></div>
-    <h2 class="fade">The maths that shows you the path.</h2>
-    <p class="lead fade">QED is the maths app that shows you the path when you don’t know where to start, and gives you the structure to learn real problem solving one proof at a time.</p>
-    <div class="actions fade"><a class="button" href="/regional/">Open QED</a></div>
-    <div class="stage" data-demo="proof">
-      <div class="paper" id="paper">
-        <p><span>Let n = 2k + 1 be odd.</span><span class="ok">✓</span></p>
-        <p><span>n² = 4k² + 4k + 1 = 4k(k+1) + 1</span><span class="ok">✓</span></p>
-        <p><span>k(k+1) is even, so 8 | 4k(k+1)</span><span class="ok">✓</span></p>
-        <p><span>Hence n² ≡ 1 (mod 8). ∎</span><span class="ok">✓</span></p>
-        <div class="scan" id="scan"></div>
-      </div>
-      <div class="score">
-        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#E6EAF0" stroke-width="12" /><circle id="ring" cx="60" cy="60" r="52" fill="none" stroke="#6F7E9C" stroke-width="12" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" /></svg>
-        <div class="num"><div><b><span id="pts">0</span>/8</b><span class="lbl">points</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="next-pages">
-  <div class="wrap">
-    <h2 class="fade">More of my work.</h2>
-    <div class="doors two fade">
-          <a class="door" href="/finance/">
-            <div>
-              <div class="mini-stat"><strong>83%</strong><span>of young Austrians bank traditionally</span></div>
-              <div class="mini-chart" aria-hidden="true"><i style="--w: 92%"></i><i style="--w: 78%"></i><i style="--w: 62%"></i></div>
-            </div>
-            <div><b>See my finance work</b><small>Market research · Excel tool</small></div>
-          </a>
-          <a class="door soft" href="/business/">
-            <div class="mini-icons" aria-hidden="true">
-              <span class="icon i-tattoo"><img src="/img/icon-weekendink.png" alt="" /></span><span class="icon i-cloth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.5a2 2 0 1 1 2 2v1.3L3.6 14.6a1.2 1.2 0 0 0 .7 2.2h15.4a1.2 1.2 0 0 0 .7-2.2L12 8.8"/></svg></span>
-            </div>
-            <div><b>See my business</b><small>Weekend Ink · clothing</small></div>
-          </a>
-    </div>
-    <a class="more fade" href="/#contact">Get in touch</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>Copyright © <span id="year">2026</span> Greta Grosz</span>
-    <span>gretagrosz.com</span>
+    <span class="me"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="30" fill="#232B3D"/><g transform="translate(16 16) scale(.68)" fill="none" stroke="#D9E0EA" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></g></svg>Greta Grosz</span>
+    <nav aria-label="Footer">
+      <a href="/finance/">Finance</a>
+      <a href="/apps/">Apps</a>
+      <a href="/cv/">CV</a>
+      <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <span>© <span data-year>2026</span> · Made by Greta in Austria</span>
   </div>
 </footer>
 
-<script src="/i18n.js"></script>
-<script src="/site.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/i18n/apps.js"></script>
+<script src="/js/apps.js"></script>
+<script src="/js/site.js"></script>
 </body>
 </html>

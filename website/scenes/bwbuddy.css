@@ -1,0 +1,94 @@
+/* BW Buddy: the app's quiz screen and Loopy's level card on a soft blue-grey.
+   Colours, radii and type are the app's own (src/index.css, accent.jsx, Quiz.jsx, Home.jsx). */
+.sc-bwbuddy {
+  --bw-acc: #D9E0EA; --bw-on: #262E40; --bw-soft: #F1F5F9; --bw-slate: #64748B; --bw-green: #34D399;
+  --bw-sh: 0 1.2cqw 4.6cqw rgba(0,0,0,.07), 0 .2cqw .6cqw rgba(0,0,0,.05);
+  --bw-sh-sm: 0 .2cqw .6cqw rgba(0,0,0,.06), 0 .2cqw .4cqw rgba(0,0,0,.04);
+  background: radial-gradient(120% 90% at 30% 20%, #E9EEF5, #DDE4EE);
+  cursor: pointer;
+}
+.sc-bwbuddy .bw-app {
+  position: absolute; inset: 0; color: #1E293B;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, 'Segoe UI', Roboto, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.sc-bwbuddy .bw-app * { box-sizing: border-box; hyphens: manual; -webkit-hyphens: manual; }
+.sc-bwbuddy :is(.bw-quiz, .bw-side, .bw-opt, .bw-ok, .bw-fill, .bw-bar, .bw-xp, .bw-up, .bw-chip, .bw-touch, .bw-stall, .bw-store, .bw-name > span, .bw-lv > span, b > i, em, .bw-bar > i) { will-change: transform, opacity; }
+
+/* quiz screen */
+.sc-bwbuddy .bw-quiz {
+  position: absolute; left: 4.5cqw; top: 4.7cqw; width: 57cqw; height: 70.6cqw;
+  border-radius: 4.4cqw; background: #F4F6F9; opacity: 0;
+  box-shadow: 0 .3cqw .8cqw rgba(35,43,61,.06), 0 4cqw 9cqw -3.6cqw rgba(35,43,61,.34);
+}
+.sc-bwbuddy .bw-top {
+  position: absolute; left: 3cqw; right: 3cqw; top: 3.2cqw;
+  display: flex; justify-content: space-between; gap: 2cqw; white-space: nowrap;
+  font-size: 2.3cqw; line-height: 1.2; font-weight: 600; color: var(--bw-on);
+}
+.sc-bwbuddy .bw-count { color: var(--bw-slate); font-variant-numeric: tabular-nums; }
+.sc-bwbuddy .bw-track {
+  position: absolute; left: 3cqw; right: 3cqw; top: 7.6cqw; height: 1.5cqw;
+  border-radius: 1cqw; overflow: hidden; background: #fff; box-shadow: inset 0 .2cqw .4cqw rgba(0,0,0,.06);
+}
+.sc-bwbuddy .bw-fill, .sc-bwbuddy .bw-bar i { position: absolute; inset: 0; background: var(--bw-acc); transform: translate3d(-100%,0,0); }
+.sc-bwbuddy .bw-q {
+  position: absolute; left: 3cqw; right: 3cqw; top: 11.8cqw; height: 22.6cqw;
+  display: flex; align-items: center; padding: 0 3.2cqw;
+  border-radius: 3.2cqw; background: #fff; box-shadow: var(--bw-sh);
+}
+.sc-bwbuddy .bw-q p { margin: 0; font-size: 2.95cqw; line-height: 1.27; font-weight: 700; letter-spacing: -.012em; text-wrap: pretty; }
+.sc-bwbuddy .bw-opt {
+  position: absolute; left: 3cqw; right: 3cqw; top: calc(37cqw + var(--i) * 8cqw); height: 6.6cqw;
+  display: flex; align-items: center; gap: 2.3cqw; padding: 0 2.3cqw;
+  border-radius: 2.6cqw; border: .42cqw solid var(--bw-soft); background: #fff; box-shadow: var(--bw-sh-sm);
+  font-size: 2.75cqw; font-weight: 600; letter-spacing: -.008em; color: #334155;
+}
+.sc-bwbuddy .bw-ok {
+  position: absolute; inset: -.42cqw; border-radius: inherit; opacity: 0;
+  border: .42cqw solid var(--bw-green); background: #D1FAE5;
+}
+.sc-bwbuddy .bw-opt b, .sc-bwbuddy .bw-opt b i {
+  display: grid; place-items: center; width: 4.1cqw; height: 4.1cqw; border-radius: 50%;
+}
+.sc-bwbuddy .bw-opt b { position: relative; flex: none; background: var(--bw-soft); font-size: 2.1cqw; font-weight: 700; color: var(--bw-slate); }
+.sc-bwbuddy .bw-opt b i { position: absolute; inset: 0; background: var(--bw-green); color: #fff; font-style: normal; opacity: 0; }
+.sc-bwbuddy .bw-opt span { position: relative; white-space: nowrap; }
+.sc-bwbuddy .bw-opt em {
+  position: absolute; right: 1.6cqw; top: 50%; margin-top: -2cqw; height: 4cqw;
+  display: grid; place-items: center; padding: 0 2.1cqw; border-radius: 2cqw; opacity: 0;
+  background: #ECFDF5; box-shadow: 0 0 0 .25cqw rgba(52,211,153,.35);
+  font-size: 2.4cqw; font-style: normal; font-weight: 700; color: #047857;
+}
+
+/* Loopy's shop and level card */
+.sc-bwbuddy .bw-side { position: absolute; left: 64.3cqw; top: 14.5cqw; width: 31.4cqw; opacity: 0; }
+.sc-bwbuddy .bw-up, .sc-bwbuddy .bw-chip {
+  position: absolute; z-index: 3; border-radius: 3cqw; white-space: nowrap; opacity: 0;
+  font-size: 2.5cqw; line-height: 1; font-weight: 700; letter-spacing: -.01em;
+}
+.sc-bwbuddy .bw-up { left: 50%; top: 0; padding: .95cqw 2.3cqw 1.05cqw; background: var(--bw-acc); color: var(--bw-on); box-shadow: var(--bw-sh); transform-origin: 50% 100%; }
+.sc-bwbuddy .bw-shop { position: relative; height: 31.4cqw; margin-top: 2.6cqw; }
+.sc-bwbuddy .bw-shop > * { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; transform-origin: 50% 63%; -webkit-user-drag: none; }
+.sc-bwbuddy .bw-store { opacity: 0; }
+.sc-bwbuddy .bw-gl { opacity: 0; }
+.sc-bwbuddy .bw-card {
+  position: relative; margin-top: 1.4cqw; padding: 2.5cqw 2.6cqw 2.4cqw;
+  border-radius: 3.2cqw; background: #fff; box-shadow: var(--bw-sh-sm), 0 2.4cqw 5cqw -2.4cqw rgba(35,43,61,.22);
+}
+.sc-bwbuddy .bw-name, .sc-bwbuddy .bw-lv { display: grid; }
+.sc-bwbuddy .bw-name > span, .sc-bwbuddy .bw-lv > span { grid-area: 1 / 1; white-space: nowrap; }
+.sc-bwbuddy .bw-name > span + span, .sc-bwbuddy .bw-lv > span + span { opacity: 0; }
+.sc-bwbuddy .bw-name { font-size: 3.05cqw; line-height: 1.2; font-weight: 700; letter-spacing: -.02em; color: #0F172A; }
+.sc-bwbuddy .bw-bar { position: relative; margin-top: 1.5cqw; height: 1.15cqw; border-radius: 1cqw; overflow: hidden; background: rgba(0,0,0,.06); }
+.sc-bwbuddy .bw-bar i { border-radius: 1cqw; }
+.sc-bwbuddy .bw-row { display: flex; justify-content: space-between; margin-top: 1.3cqw; font-size: 2.3cqw; line-height: 1.25; font-weight: 600; }
+.sc-bwbuddy .bw-xp { color: var(--bw-slate); font-variant-numeric: tabular-nums; transform-origin: 0 60%; }
+.sc-bwbuddy .bw-lv { color: #34405A; text-align: right; }
+
+/* +3 XP and the finger */
+.sc-bwbuddy .bw-chip { left: 0; top: 0; padding: .9cqw 1.9cqw 1cqw; background: var(--bw-on); color: #fff; font-size: 2.45cqw; box-shadow: 0 1cqw 2.4cqw -.6cqw rgba(38,46,64,.45); }
+.sc-bwbuddy .bw-touch {
+  position: absolute; left: 0; top: 0; z-index: 4; width: 6.4cqw; height: 6.4cqw; border-radius: 50%; opacity: 0;
+  background: rgba(38,46,64,.2); box-shadow: 0 0 0 .35cqw rgba(255,255,255,.7);
+}

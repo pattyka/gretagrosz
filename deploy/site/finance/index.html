@@ -3,169 +3,201 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Finance work · Greta Grosz</title>
-<meta name="description" content="Market research on how Austria’s banks compete for Gen Z, and a live account calculator built from it." />
-<meta property="og:title" content="Finance work · Greta Grosz" />
-<meta property="og:description" content="Business and finance student in Austria with roots in the UK and Hungary. Building apps and exploring business ventures." />
+<title>Finance · Greta Grosz</title>
+<meta name="description" content="How Austria’s banks compete for Gen Z: Greta Grosz’s market research, and the Excel tool that turns it into an account recommendation." />
+<meta property="og:title" content="Finance · Greta Grosz" />
+<meta property="og:description" content="How Austria’s banks compete for Gen Z: Greta Grosz’s market research, and the Excel tool that turns it into an account recommendation." />
 <meta property="og:url" content="https://gretagrosz.com/finance/" />
-<meta name="theme-color" content="#F4F6F9" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#FFFFFF" />
 <meta name="color-scheme" content="light" />
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
 <link rel="apple-touch-icon" href="/img/favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/site.css" />
+<link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/finance.css" />
 <script>
-  // Hide the page for a moment if it will be shown in German, so English doesn't flash first
-  try { var lang = localStorage.getItem('lang') } catch (e) {}
-  if (lang === 'de' || (lang !== 'en' && (navigator.languages || [navigator.language]).some(function (l) { return /^de\b/i.test(l) }))) document.documentElement.classList.add('i18n-wait')
+  // Hide the page for a moment if it will be shown in German, so English never flashes first
+  try { var l = localStorage.getItem('lang') } catch (e) {}
+  if (l === 'de' || (l !== 'en' && (navigator.languages || [navigator.language]).some(function (x) { return /^de\b/i.test(x) }))) document.documentElement.classList.add('i18n-wait')
 </script>
 </head>
 <body>
 
 <nav class="nav" aria-label="Main">
-  <div class="wrap">
-    <a class="name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
-    <div class="links">
-      <a href="/finance/">Finance</a>
-      <a href="/apps/">Apps</a>
-      <a href="/business/">Business</a>
-      <a href="/#contact">Contact</a>
-    </div>
-    <div class="nav-tools">
-      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
-    <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16" /></svg>
-    </button>
-    </div>
-  </div>
+  <a class="me" href="/" aria-label="Greta Grosz, home"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="30" fill="#232B3D"/><g transform="translate(16 16) scale(.68)" fill="none" stroke="#D9E0EA" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></g></svg><span class="name">Greta Grosz</span></a>
+  <div class="links"><a href="/" class="home-link">Home</a><a href="/finance/" aria-current="page">Finance</a><a href="/apps/">Apps</a><a href="/cv/">CV</a></div>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button></div>
 </nav>
 
-<aside class="sidebar" id="sidebar" aria-label="Site">
-  <a class="sb-name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
-  <p class="sb-role">Business &amp; finance student (HAK), Austria</p>
-  <p class="sb-status">Looking for a banking internship</p>
-  <nav class="sb-links sb-pages" aria-label="Pages">
-    <a href="/">Home</a>
-    <a href="/finance/" class="current" aria-current="page">Finance work</a>
-    <a href="/apps/">Apps</a>
-    <a href="/business/">Business</a>
-  </nav>
-  <p class="sb-group">On this page</p>
-  <nav class="sb-links sb-sections" aria-label="On this page">
-    <a href="#top" data-section="top">Overview</a>
-    <a href="#research" data-section="research">Market research</a>
-    <a href="#tool" data-section="tool">Excel tool</a>
-    <a href="#programmes" data-section="programmes">Programmes</a>
-  </nav>
-  <div class="sb-foot">
-    <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
-    <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="/files/Marktanalyse_Gen_Z_und_oesterreichische_Banken.pdf">Market research (PDF)</a>
-  </div>
-</aside>
-<div class="scrim" id="scrim"></div>
-
-<header class="page-intro" id="top">
+<main id="main">
+<header class="f-hero">
   <div class="wrap">
-    <h1 class="fade">My finance work</h1>
-    <p class="fade">I researched how Austria’s banks win young customers, then turned what I found into a tool that recommends an account.</p>
+    <p class="eyebrow rv">Finance</p>
+    <h1 class="rv" style="--d:1"><span>Banks want my generation.</span> <span class="soft">I worked out how they compete for it.</span></h1>
+    <p class="lead rv" style="--d:2">I researched how Austria’s banks win young customers, then turned what I found into a tool that recommends an account.</p>
+    <nav class="chapters rv" style="--d:3" aria-label="On this page">
+      <a href="#research"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span><b>Market research</b><small>July 2026</small></span></a>
+      <a href="#calculator"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></span><span><b>Account calculator</b><small>12 accounts, live</small></span></a>
+      <a href="#programmes"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><span><b>Programmes</b><small>JPMorgan · PNC</small></span></a>
+    </nav>
   </div>
 </header>
 
-<!-- Finance work -->
-<section class="section finance-page" id="finance">
+<section class="section f-research" id="research" aria-labelledby="research-h">
   <div class="wrap">
+    <p class="eyebrow rv">Market research · July 2026</p>
+    <h2 class="rv" id="research-h" style="--d:1">How Austria’s banks compete for Gen Z.</h2>
+    <p class="lead f-measure rv" style="--d:2">A market analysis of Erste Bank &amp; Sparkasse, Raiffeisen, Bank Austria, BAWAG and the neobanks: how each one wins young customers, from the first touchpoint to the first investment.</p>
 
-    <div class="project" id="research">
-      <div class="show-head fade" style="--s: 44px"><span class="badge">Market research · July 2026</span></div>
-      <h3 class="fade">How Austria’s banks compete for Gen Z.</h3>
-      <p class="lead fade">A market analysis of Erste Bank &amp; Sparkasse, Raiffeisen, Bank Austria, BAWAG and the neobanks: how each one wins young customers, from the first touchpoint to the first investment.</p>
-      <div class="stats" id="stats">
-        <div class="stat fade"><b data-to="83" data-suffix="%">0%</b><span>of young Austrians keep their main account at a traditional universal bank</span></div>
-        <div class="stat fade"><b data-to="43" data-suffix="%">0%</b><span>chose their first bank because their parents already banked there</span></div>
-        <div class="stat fade"><b data-to="465" data-prefix="€" data-suffix="bn">€0bn</b><span>will be inherited in Austria over the next 30 years</span></div>
-        <div class="stat fade"><b data-to="58" data-suffix="%">0%</b><span>of Gen Z would switch banks if another met their needs better</span></div>
-      </div>
-      <p class="source">Sources: Bankenverband/BCG/Marketmind “Bankkunde Gen Z” (2025), AK / EU Joint Research Centre, ING/Visa Gen-Z study (2024).</p>
-      <div class="insights">
-        <div class="insight fade"><i>INSIGHT 1</i><p>The free account is a must, not a strategy. Banks compete on everything around it, with bonuses tied to habits rather than to opening an account.</p></div>
-        <div class="insight fade"><i>INSIGHT 2</i><p>The race starts years before the first account: in the classroom with financial education, and in the feed on TikTok.</p></div>
-        <div class="insight fade"><i>INSIGHT 3</i><p>The end game is investing. Whoever holds Gen Z’s main account and first portfolio holds the inheritance generation.</p></div>
-      </div>
-      <a class="more fade" href="/files/Marktanalyse_Gen_Z_und_oesterreichische_Banken.pdf" style="display: inline-block; margin-top: 24px">Read the full analysis (PDF, German)</a>
+    <div class="stats">
+      <figure class="stat rv" data-stat>
+        <svg class="waffle" data-n="83" viewBox="0 0 100 100" aria-hidden="true"></svg>
+        <figcaption><b class="num" data-to="83" data-fmt="pct" data-no-i18n>83%</b><span>of young Austrians keep their main account at a traditional universal bank</span></figcaption>
+      </figure>
+      <figure class="stat rv" style="--d:1" data-stat>
+        <svg class="waffle" data-n="43" viewBox="0 0 100 100" aria-hidden="true"></svg>
+        <figcaption><b class="num" data-to="43" data-fmt="pct" data-no-i18n>43%</b><span>chose their first bank because their parents already banked there</span></figcaption>
+      </figure>
+      <figure class="stat rv" style="--d:2" data-stat>
+        <svg class="waffle" data-n="58" viewBox="0 0 100 100" aria-hidden="true"></svg>
+        <figcaption><b class="num" data-to="58" data-fmt="pct" data-no-i18n>58%</b><span>of Gen Z would switch banks if another met their needs better</span></figcaption>
+      </figure>
+      <figure class="stat big rv" data-stat>
+        <figcaption><b class="num" data-to="465" data-fmt="bn" data-no-i18n>€465bn</b><span>will be inherited in Austria over the next 30 years</span></figcaption>
+      </figure>
     </div>
+    <p class="source rv">Sources: Bankenverband/BCG/Marketmind “Bankkunde Gen Z” (2025), AK / EU Joint Research Centre, ING/Visa Gen-Z study (2024).</p>
 
-    <div class="project" id="tool">
-      <div class="show-head fade"><span class="badge">Excel tool · Live version</span></div>
-      <h3 class="fade">Which youth account fits you? Try it.</h3>
-      <p class="lead fade">I turned the research into an Excel tool that recommends a bank account. Set your age and what matters to you: each account gets a weighted score from 0 to 5.</p>
-      <div class="tags fade"><span>XLOOKUP</span><span>Data validation</span><span>Weighted scoring</span><span>Conditional formatting</span><span>Charts</span></div>
-      <div class="calc fade">
-        <div class="panel">
-          <h4>Your profile</h4>
-          <div class="field"><label for="c-age">Age <output id="o-age">16</output></label><input type="range" id="c-age" min="6" max="30" value="16" /></div>
-          <h4 style="margin-top: 26px">How important is… (0–5)</h4>
-          <div class="field"><label for="c-app">App <output id="o-app">3</output></label><input type="range" id="c-app" min="0" max="5" value="3" /></div>
-          <div class="field"><label for="c-events">Events &amp; tickets <output id="o-events">3</output></label><input type="range" id="c-events" min="0" max="5" value="3" /></div>
-          <div class="field"><label for="c-branches">Branches <output id="o-branches">3</output></label><input type="range" id="c-branches" min="0" max="5" value="3" /></div>
-          <div class="field"><label for="c-invest">Investing <output id="o-invest">3</output></label><input type="range" id="c-invest" min="0" max="5" value="3" /></div>
-          <div class="field"><label for="c-bonus">Opening bonus <output id="o-bonus">3</output></label><input type="range" id="c-bonus" min="0" max="5" value="3" /></div>
-        </div>
-        <div class="panel">
-          <div class="pick" aria-live="polite">
-            <div><small>Your recommendation</small><b id="r-name">spark7</b><div class="meta" id="r-meta">Erste Bank &amp; Sparkasse · bonus €20</div></div>
-            <div class="big"><small>Score</small><b id="r-score">3.70</b></div>
+    <ol class="insights">
+      <li class="rv"><span class="n" aria-hidden="true">1</span><h3>The free account is a must, not a strategy.</h3><p>Banks compete on everything around it, with bonuses tied to habits rather than to opening an account.</p></li>
+      <li class="rv" style="--d:1"><span class="n" aria-hidden="true">2</span><h3>The race starts years before the first account.</h3><p>In the classroom with financial education, and in the feed on TikTok.</p></li>
+      <li class="rv" style="--d:2"><span class="n" aria-hidden="true">3</span><h3>The end game is investing.</h3><p>Whoever holds Gen Z’s main account and first portfolio holds the inheritance generation.</p></li>
+    </ol>
+
+    <a class="doc rv" href="/files/Marktanalyse_Gen_Z_und_oesterreichische_Banken.pdf">
+      <span class="page" aria-hidden="true"><i></i><i></i><i></i><i></i><em>PDF</em></span>
+      <span class="doc-t"><b>Read the full analysis</b><small>PDF · 15 pages · in German</small></span>
+      <span class="btn small">Open</span>
+    </a>
+  </div>
+</section>
+
+<section class="section snow f-tool" id="calculator" aria-labelledby="calc-h">
+  <div class="wrap">
+    <p class="eyebrow rv">Excel tool · Live version</p>
+    <h2 class="rv" id="calc-h" style="--d:1">Which youth account fits you?</h2>
+    <p class="lead f-measure rv" style="--d:2">I turned the research into an Excel tool that recommends a bank account. Each of the 12 accounts gets a weighted score from 0 to 5.</p>
+    <ul class="tags rv" style="--d:3" aria-label="Excel techniques">
+      <li>XLOOKUP</li><li>Data validation</li><li>Weighted scoring</li><li>Conditional formatting</li><li>Charts</li>
+    </ul>
+
+    <div class="calc rv" id="calc">
+      <form class="controls" id="controls" aria-label="Your profile" novalidate>
+        <div class="group">
+          <h3 class="group-h">Your profile</h3>
+          <div class="cell age">
+            <div class="cell-top">
+              <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+              <label for="c-age">Age</label>
+              <output for="c-age" id="o-age" data-no-i18n>16</output>
+            </div>
+            <div class="slider"><span class="end" aria-hidden="true">6</span><input type="range" id="c-age" name="age" min="6" max="30" step="1" value="16" /><span class="end" aria-hidden="true">30</span></div>
           </div>
-          <ol class="ranking" id="ranking"></ol>
-          <p class="note">Scores use my own 1–5 ratings for app, events, branches and investing, based on the market research (July 2026). Bonuses are time-limited offers. <a class="more" href="/files/Jugendkonto_Vergleichsrechner.xlsx" style="font-size: 13px">Download the Excel file</a></p>
+        </div>
+        <div class="group">
+          <h3 class="group-h">How important is… <span class="range" data-no-i18n>0–5</span></h3>
+          <div class="cell"><div class="cell-top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg></span><span class="lbl" id="l-app">App</span></div><div class="seg" data-k="app" role="radiogroup" aria-labelledby="l-app"></div></div>
+          <div class="cell"><div class="cell-top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v8a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2V8Z"/><path d="M14 6v12" stroke-dasharray="2 2.5"/></svg></span><span class="lbl" id="l-events">Events &amp; tickets</span></div><div class="seg" data-k="events" role="radiogroup" aria-labelledby="l-events"></div></div>
+          <div class="cell"><div class="cell-top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l9-5 9 5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><span class="lbl" id="l-branches">Branches</span></div><div class="seg" data-k="branches" role="radiogroup" aria-labelledby="l-branches"></div></div>
+          <div class="cell"><div class="cell-top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span><span class="lbl" id="l-invest">Investing</span></div><div class="seg" data-k="invest" role="radiogroup" aria-labelledby="l-invest"></div></div>
+          <div class="cell"><div class="cell-top"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-1.5-3-5-3.5-5-1.5S10 8 12 8Zm0 0c1.5-3 5-3.5 5-1.5S14 8 12 8Z"/></svg></span><span class="lbl" id="l-bonus">Opening bonus</span></div><div class="seg" data-k="bonus" role="radiogroup" aria-labelledby="l-bonus"></div></div>
+        </div>
+      </form>
+
+      <div class="pick" id="pick" data-no-i18n>
+        <img class="peek" src="/img/mascot.webp" alt="" width="416" height="261" loading="lazy" decoding="async" />
+        <div class="pick-card">
+          <div class="pick-main">
+            <small id="r-kicker"></small>
+            <b id="r-name"></b>
+            <span id="r-meta"></span>
+          </div>
+          <div class="pick-score"><small id="r-score-l"></small><b id="r-score"></b></div>
         </div>
       </div>
+
+      <div class="results" data-no-i18n>
+        <div class="fx" id="fx"><span class="fx-name" id="fx-name"></span><span class="fx-sign" aria-hidden="true">fx</span><code id="fx-f"></code></div>
+        <ol class="ranking" id="ranking" aria-label="Ranking"></ol>
+      </div>
+      <p class="sr" id="announce" aria-live="polite" data-no-i18n></p>
+    </div>
+
+    <p class="note rv"><span>Scores use my own 1–5 ratings for app, events, branches and investing, based on the market research (July 2026). Bonuses are time-limited offers.</span> <a class="link" href="/files/Jugendkonto_Vergleichsrechner.xlsx" download>Download the Excel file</a></p>
+  </div>
+</section>
+
+<section class="section f-prog" id="programmes" aria-labelledby="prog-h">
+  <div class="wrap">
+    <p class="eyebrow rv">Programmes</p>
+    <h2 class="rv" id="prog-h" style="--d:1">Learning from the banks.</h2>
+    <div class="progs">
+      <article class="prog rv">
+        <p class="prog-k"><span>Forage</span><span>Virtual</span></p>
+        <h3>JPMorgan Chase &amp; Co.</h3>
+        <p class="prog-role">Quantitative Research</p>
+        <p>Forage Virtual Experience Programme. Hands-on tasks in financial analysis.</p>
+      </article>
+      <article class="prog rv" style="--d:1">
+        <p class="prog-k"><span>Forage</span><span>Virtual</span></p>
+        <h3>PNC Bank</h3>
+        <p class="prog-role">Financial Services</p>
+        <p>Forage Virtual Experience Programme with a banking simulation and banking processes.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="section" id="programmes" style="background: #F7F8FA">
+<section class="section snow f-next" aria-labelledby="next-h">
   <div class="wrap">
-    <p class="label fade">Programmes</p>
-    <h2 class="big fade">Learning from <span>the banks.</span></h2>
-    <div class="rows">
-      <div class="xp fade"><p class="when">Virtual</p><div><h3>JPMorgan Chase &amp; Co. <span>· Quantitative Research</span></h3><p>Forage Virtual Experience Programme. Hands-on tasks in financial analysis.</p></div></div>
-      <div class="xp fade"><p class="when">Virtual</p><div><h3>PNC Bank <span>· Financial Services</span></h3><p>Forage Virtual Experience Programme with a banking simulation and banking processes.</p></div></div>
+    <div class="next">
+      <div class="talk rv">
+        <h2 id="next-h">Let’s talk.</h2>
+        <p class="lead">I’m looking for a banking internship (Pflichtpraktikum). I’d love to hear from you.</p>
+        <div class="actions" data-contact></div>
+      </div>
+      <a class="door rv" style="--d:1" href="/apps/">
+        <span class="icons" aria-hidden="true">
+          <span class="app-icon"><img src="/img/icon-ten.png" alt="" width="240" height="240" loading="lazy" decoding="async" /></span>
+          <span class="app-icon"><img src="/img/icon-bw.png" alt="" width="240" height="240" loading="lazy" decoding="async" /></span>
+          <span class="app-icon"><img src="/img/icon-blank.png" alt="" width="240" height="240" loading="lazy" decoding="async" /></span>
+          <span class="app-icon"><img src="/img/icon-qed.png" alt="" width="240" height="240" loading="lazy" decoding="async" /></span>
+        </span>
+        <span class="door-t"><b>See my apps</b><small>4 apps, all live</small></span>
+        <span class="door-go" aria-hidden="true">›</span>
+      </a>
     </div>
   </div>
 </section>
+</main>
 
-<section class="next-pages">
+<footer class="foot">
   <div class="wrap">
-    <h2 class="fade">More of my work.</h2>
-    <div class="doors two fade">
-          <a class="door dark" href="/apps/">
-            <div class="mini-icons" aria-hidden="true">
-              <span class="icon i-ten"><img src="/img/icon-ten.png" alt="" /></span><span class="icon i-bw"><img src="/img/icon-bw.png" alt="" /></span><span class="icon i-blank"><img src="/img/icon-blank.png" alt="" /></span><span class="icon i-qed"><img src="/img/icon-qed.png" alt="" /></span>
-            </div>
-            <div><b>See my apps</b><small>4 apps, all live</small></div>
-          </a>
-          <a class="door soft" href="/business/">
-            <div class="mini-icons" aria-hidden="true">
-              <span class="icon i-tattoo"><img src="/img/icon-weekendink.png" alt="" /></span><span class="icon i-cloth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.5a2 2 0 1 1 2 2v1.3L3.6 14.6a1.2 1.2 0 0 0 .7 2.2h15.4a1.2 1.2 0 0 0 .7-2.2L12 8.8"/></svg></span>
-            </div>
-            <div><b>See my business</b><small>Weekend Ink · clothing</small></div>
-          </a>
-    </div>
-    <a class="more fade" href="/#contact">Get in touch</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>Copyright © <span id="year">2026</span> Greta Grosz</span>
-    <span>gretagrosz.com</span>
+    <span class="me"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="30" fill="#232B3D"/><g transform="translate(16 16) scale(.68)" fill="none" stroke="#D9E0EA" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></g></svg>Greta Grosz</span>
+    <nav aria-label="Footer">
+      <a href="/finance/">Finance</a>
+      <a href="/apps/">Apps</a>
+      <a href="/cv/">CV</a>
+      <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <span>© <span data-year>2026</span> · Made by Greta in Austria</span>
   </div>
 </footer>
 
-<script src="/i18n.js"></script>
-<script src="/site.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/i18n/finance.js"></script>
+<script src="/js/finance.js"></script>
+<script src="/js/site.js"></script>
 </body>
 </html>

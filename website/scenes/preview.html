@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scene preview</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="/css/base.css" />
+<style>
+  /* Dev-only harness: /scenes/preview.html?scene=deca[&lang=de][&w=560] */
+  body { background: var(--snow); padding: 40px 20px; }
+  .row { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; justify-content: center; }
+  .box { width: var(--w, 560px); max-width: 100%; }
+  .box.small { --w: 340px; }
+  .bar { display: flex; gap: 12px; justify-content: center; margin-bottom: 28px; }
+</style>
+</head>
+<body>
+<div class="bar"><div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div></div>
+<div class="row">
+  <div class="box"><div class="scene" id="a"></div></div>
+  <div class="box small"><div class="scene" id="b"></div></div>
+</div>
+<script src="/js/i18n.js"></script>
+<script>
+  const p = new URLSearchParams(location.search)
+  if (p.get('lang')) I18N.set(p.get('lang'))
+  if (p.get('w')) document.querySelector('.box').style.setProperty('--w', p.get('w') + 'px')
+  for (const el of document.querySelectorAll('.scene')) el.dataset.scene = p.get('scene') || 'deca'
+</script>
+<script src="/js/site.js"></script>
+</body>
+</html>

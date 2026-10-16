@@ -4,179 +4,278 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Greta Grosz</title>
-<meta name="description" content="Greta Grosz — business and finance student in Austria with roots in the UK and Hungary. Finance work, apps and her own small business." />
+<meta name="description" content="Greta Grosz, 17: business and finance student in Austria, born in the UK, raised in Hungary. Market research on how banks win Gen Z, four apps she built, and the internship she is looking for." />
 <meta property="og:title" content="Greta Grosz" />
-<meta property="og:description" content="Business and finance student in Austria with roots in the UK and Hungary. Building apps and exploring business ventures." />
+<meta property="og:description" content="Greta Grosz, 17: business and finance student in Austria, born in the UK, raised in Hungary. Market research on how banks win Gen Z, four apps she built, and the internship she is looking for." />
 <meta property="og:url" content="https://gretagrosz.com/" />
-<meta name="theme-color" content="#F4F6F9" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#FFFFFF" />
 <meta name="color-scheme" content="light" />
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
 <link rel="apple-touch-icon" href="/img/favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/site.css" />
-<link rel="stylesheet" href="/home.css" />
+<link rel="preload" href="/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/home.css" />
 <script>
-  // Hide the page for a moment if it will be shown in German, so English doesn't flash first
-  try { var lang = localStorage.getItem('lang') } catch (e) {}
-  if (lang === 'de' || (lang !== 'en' && (navigator.languages || [navigator.language]).some(function (l) { return /^de\b/i.test(l) }))) document.documentElement.classList.add('i18n-wait')
+  // Hide the page for a moment if it will be shown in German, so English never flashes first
+  try { var l = localStorage.getItem('lang') } catch (e) {}
+  if (l === 'de' || (l !== 'en' && (navigator.languages || [navigator.language]).some(function (x) { return /^de\b/i.test(x) }))) document.documentElement.classList.add('i18n-wait')
 </script>
 </head>
 <body>
 
 <nav class="nav" aria-label="Main">
-  <div class="wrap">
-    <a class="name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
-    <div class="links">
-      <a href="/finance/">Finance</a>
-      <a href="/apps/">Apps</a>
-      <a href="/business/">Business</a>
-      <a href="/#contact">Contact</a>
-    </div>
-    <div class="nav-tools">
-      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
-    <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16" /></svg>
-    </button>
-    </div>
-  </div>
+  <a class="me" href="/" aria-label="Greta Grosz, home"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="30" fill="#232B3D"/><g transform="translate(16 16) scale(.68)" fill="none" stroke="#D9E0EA" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></g></svg><span class="name">Greta Grosz</span></a>
+  <div class="links"><a href="/" aria-current="page" class="home-link">Home</a><a href="/finance/">Finance</a><a href="/apps/">Apps</a><a href="/cv/">CV</a></div>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="de" aria-pressed="false">DE</button></div>
 </nav>
 
-<aside class="sidebar" id="sidebar" aria-label="Site">
-  <a class="sb-name" href="/"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></svg>Greta Grosz</a>
-  <p class="sb-role">Business &amp; finance student (HAK), Austria</p>
-  <p class="sb-status">Looking for a banking internship</p>
-  <nav class="sb-links sb-pages" aria-label="Pages">
-    <a href="/" class="current" aria-current="page">Home</a>
-    <a href="/finance/">Finance work</a>
-    <a href="/apps/">Apps</a>
-    <a href="/business/">Business</a>
-  </nav>
-  <p class="sb-group">On this page</p>
-  <nav class="sb-links sb-sections" aria-label="On this page">
-    <a href="#top" data-section="top">Intro</a>
-    <a href="#about" data-section="about">About</a>
-    <a href="#journey" data-section="journey">My journey</a>
-    <a href="#work" data-section="work">What I do</a>
-    <a href="#contact" data-section="contact">Contact</a>
-  </nav>
-  <div class="sb-foot">
-    <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button></div>
-    <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="/files/Marktanalyse_Gen_Z_und_oesterreichische_Banken.pdf">Market research (PDF)</a>
-  </div>
-</aside>
-<div class="scrim" id="scrim"></div>
+<main id="main">
 
-<header class="h-hero" id="top">
-  <div class="wrap">
-    <div class="h-hero-inner">
-      <p class="h-eyebrow"><span class="h-line"><span>Greta Grosz</span></span></p>
-      <h1 class="h-title"><span class="h-line"><span>Banks are competing for my generation.</span></span> <span class="h-line h-accent"><span>I researched how.</span></span></h1>
-      <p class="h-sub"><span class="h-line"><span>I’m Greta, a business and finance student (HAK) in Austria. I’m looking for a banking internship.</span></span></p>
-      <nav class="h-links" aria-label="Pages">
-        <a href="/finance/">Finance work</a>
-        <a href="/apps/">Apps</a>
-        <a href="/business/">Business</a>
-      </nav>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="status hero-in" style="--i:0">Looking for a banking internship</p>
+      <h1 class="hero-title"><span class="ln hero-in" style="--i:1">Banks are competing for my generation.</span> <span class="ln accent hero-in" style="--i:2">I researched how.</span></h1>
+      <p class="lead hero-lead hero-in" style="--i:3"><span class="me">I’m Greta Grosz, 17.</span> I study business and finance at a BHAK in Austria, in German, my third language.</p>
+      <div class="hero-cta hero-in" style="--i:4">
+        <a class="btn" href="/finance/">See my finance work</a>
+        <a class="btn soft" href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></svg>LinkedIn</a>
+      </div>
     </div>
-  </div>
-</header>
-
-<section class="h-about" id="about">
-  <div class="h-about-pin">
-    <div class="wrap">
-      <p class="label">About</p>
-      <p class="h-words" id="h-words"><span>I don’t wait to be taught.</span> <span class="h-hi">I find out.</span></p>
-      <div class="h-more" id="h-more">
-        <p>I’ve worked a till, sold my own designs to strangers and explained grammar to classmates. Real customers teach more than any textbook.</p>
-        <p>If I need a tool, I build it. In Excel, or from scratch.</p>
-        <p>English, Hungarian, German. I’ll reply in all three.</p>
+    <div class="hero-art">
+      <div class="polaroid" id="polaroid">
+        <span class="peek" aria-hidden="true"><img src="/img/mascot.webp" width="416" height="261" alt="" decoding="async" /></span>
+        <div class="photo"><img src="/img/greta.jpg" width="720" height="900" alt="Greta Grosz" fetchpriority="high" decoding="async" /></div>
+        <p class="hello hand" aria-hidden="true">Hi, I’m Greta!</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="h-journey" id="journey">
-  <div class="h-pin">
-    <div class="h-map" aria-hidden="true"><svg id="h-svg"></svg></div>
-    <div class="h-story">
-      <p class="label">My journey</p>
-      <ol class="h-chs">
-        <li class="h-ch">
-          <p class="h-when">2009</p>
-          <h3>Born in the U.K.</h3>
-          <p>English is my first language. I went to school in England.</p>
+<section class="proof" aria-label="At a glance">
+  <div class="wrap">
+    <ul class="tiles">
+      <li class="tile t-age rv" style="--d:0">
+        <b class="n">17</b>
+        <span class="k">years old</span>
+        <span class="v">Born in the UK, 2009</span>
+      </li>
+      <li class="tile t-route rv" style="--d:1">
+        <b class="n">3</b>
+        <span class="k">countries</span>
+        <span class="route" aria-hidden="true"><i>UK</i><i>HU</i><i>AT</i><svg class="mini-plane" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></span>
+        <span class="sr">United Kingdom, Hungary, Austria</span>
+      </li>
+      <li class="tile t-lang rv" style="--d:2">
+        <b class="n">3</b>
+        <span class="k">languages</span>
+        <span class="langs"><span><span>English</span><em>native · C1</em></span><span><span>Hungarian</span><em>native</em></span><span><span>German</span><em>B2</em></span></span>
+      </li>
+      <li class="tile t-apps rv" style="--d:3">
+        <b class="n">4</b>
+        <span class="k">apps, all live</span>
+        <span class="fan" aria-hidden="true"><span class="app-icon"><img src="/img/icon-ten.png" width="240" height="240" alt="" loading="lazy" /></span><span class="app-icon"><img src="/img/icon-bw.png" width="240" height="240" alt="" loading="lazy" /></span><span class="app-icon"><img src="/img/icon-blank.png" width="240" height="240" alt="" loading="lazy" /></span><span class="app-icon"><img src="/img/icon-qed.png" width="240" height="240" alt="" loading="lazy" /></span></span>
+        <span class="sr">Deca, BW Buddy, Blank, QED</span>
+      </li>
+      <li class="tile t-research rv" style="--d:4">
+        <b class="n">1</b>
+        <span class="k">market analysis</span>
+        <span class="v">How Austria’s banks compete for Gen&nbsp;Z</span>
+      </li>
+      <li class="tile t-forage rv" style="--d:5">
+        <b class="n">2</b>
+        <span class="k">Forage programmes</span>
+        <span class="v">JPMorgan Chase &amp; Co. · PNC&nbsp;Bank</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="about section" id="about">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h2 class="statement" id="statement"><span>I don’t wait to be taught.</span> <span class="hi">I find out.</span></h2>
+    <div class="about-lines">
+      <p class="rv" style="--d:0">I’ve worked a till, explained grammar to classmates and organised the day at a children’s camp. Real people teach more than any textbook.</p>
+      <p class="rv" style="--d:1">If I need a tool, I build it. In Excel, or from scratch.</p>
+      <p class="rv" style="--d:2">English, Hungarian, German. I’ll reply in all three.</p>
+    </div>
+  </div>
+</section>
+
+<section class="jr snow" id="journey" aria-labelledby="jr-title">
+  <div class="jr-stage">
+    <div class="jr-map" aria-hidden="true" data-no-i18n><svg id="jr-svg"></svg></div>
+    <div class="wrap jr-ui">
+      <h2 class="jr-title" id="jr-title">Three countries by 17.</h2>
+      <div class="jr-story">
+        <ol class="jr-chs">
+          <li class="jr-ch">
+            <p class="when">2009</p>
+            <h3>Born in the UK.</h3>
+            <p>English is my first language. I went to school in England.</p>
+          </li>
+          <li class="jr-ch">
+            <p class="when">Age 12 · 2021</p>
+            <h3>Moved to Hungary.</h3>
+            <p>Hungarian is my other native language. A bilingual school first, then at 14 a bilingual business school (HAK).</p>
+          </li>
+          <li class="jr-ch">
+            <p class="when">Age 17 · 2026</p>
+            <h3>Moved to Austria, alone.</h3>
+            <p>Now I study business and finance at a BHAK, a business academy, in German.</p>
+          </li>
+          <li class="jr-ch">
+            <p class="when">Now</p>
+            <h3>Next stop: a banking internship.</h3>
+            <p>Until then I keep learning by doing: market research, Excel tools and four apps of my own.</p>
+          </li>
+        </ol>
+        <div class="jr-steps" aria-hidden="true"><button type="button" tabindex="-1" data-step="0">2009</button><button type="button" tabindex="-1" data-step="1">2021</button><button type="button" tabindex="-1" data-step="2">2026</button><button type="button" tabindex="-1" data-step="3">Now</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work section" id="work">
+  <div class="wrap">
+    <h2 class="sec-title rv">What I do.</h2>
+    <div class="work-grid">
+      <a class="wcard w-fin card rv" href="/finance/">
+        <span class="eyebrow">Finance</span>
+        <h3>How Austria’s banks compete for Gen&nbsp;Z.</h3>
+        <div class="fin-stat">
+          <div class="waffle" aria-hidden="true"></div>
+          <div class="fin-num">
+            <b>83%</b>
+            <span>of young Austrians keep their main account at a traditional universal bank</span>
+          </div>
+        </div>
+        <p class="wmeta">Market research · July 2026</p>
+        <p class="wtext">Plus an Excel tool that recommends a youth account by weighted score.</p>
+        <span class="link">See my finance work</span>
+      </a>
+      <a class="wcard w-apps card rv" href="/apps/" style="--d:1">
+        <span class="eyebrow">Apps</span>
+        <h3>Four apps I designed and built. All live.</h3>
+        <ul class="app-list">
+          <li><span class="app-icon"><img src="/img/icon-ten.png" width="240" height="240" alt="" loading="lazy" /></span><span><b>Deca</b><span>Ten words a day. 3,650 a year.</span></span></li>
+          <li><span class="app-icon"><img src="/img/icon-bw.png" width="240" height="240" alt="" loading="lazy" /></span><span><b>BW Buddy</b><span>Betriebswirtschaft, made into a game.</span></span></li>
+          <li><span class="app-icon"><img src="/img/icon-blank.png" width="240" height="240" alt="" loading="lazy" /></span><span><b>Blank</b><span>Arrive blank, leave with a project.</span></span></li>
+          <li><span class="app-icon"><img src="/img/icon-qed.png" width="240" height="240" alt="" loading="lazy" /></span><span><b>QED</b><span>Maths that shows you the path, proof by proof.</span></span></li>
+        </ul>
+        <span class="link">See my apps</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="xp section snow" id="experience">
+  <div class="wrap xp-grid">
+    <div class="xp-main">
+      <h2 class="sec-title rv">Experience.</h2>
+      <ol class="xp-list">
+        <li class="rv">
+          <span class="when">Forage</span>
+          <div>
+            <h3>JPMorgan Chase &amp; Co.</h3>
+            <p class="meta">Virtual experience · Quantitative Research</p>
+            <p>Hands-on tasks in financial analysis.</p>
+          </div>
         </li>
-        <li class="h-ch">
-          <p class="h-when">Age 12 · 2021</p>
-          <h3>Moved to Hungary.</h3>
-          <p>Hungarian is my other native language. A bilingual school first, then at 14 a bilingual business school (HAK).</p>
+        <li class="rv">
+          <span class="when">Forage</span>
+          <div>
+            <h3>PNC Bank</h3>
+            <p class="meta">Virtual experience · Financial Services</p>
+            <p>A banking simulation and how banking processes work.</p>
+          </div>
         </li>
-        <li class="h-ch">
-          <p class="h-when">Age 17 · 2026</p>
-          <h3>Moved to Austria alone.</h3>
-          <p>Now I study business and finance at a BHAK, a business academy, in German.</p>
+        <li class="rv">
+          <span class="when">Ongoing</span>
+          <div>
+            <h3>English tutoring</h3>
+            <p class="meta">For classmates</p>
+            <p>Helping classmates with English grammar and vocabulary.</p>
+          </div>
         </li>
-        <li class="h-ch">
-          <p class="h-when">Now</p>
-          <h3>Next stop: a banking internship.</h3>
-          <p>Until then, I keep learning by doing: research, apps and my own small business.</p>
+        <li class="rv">
+          <span class="when">June 2025</span>
+          <div>
+            <h3>Global Green Group</h3>
+            <p class="meta">Research support</p>
+            <p>Research and lab work, data entry and documentation.</p>
+          </div>
+        </li>
+        <li class="rv">
+          <span class="when">Summer 2024</span>
+          <div>
+            <h3>Lipót Bad und Camping</h3>
+            <p class="meta">Summer job</p>
+            <p>Running the till, selling ice cream and preparing fast food.</p>
+          </div>
+        </li>
+        <li class="rv">
+          <span class="when">Every summer</span>
+          <div>
+            <h3>Children’s summer camp</h3>
+            <p class="meta">Volunteering, one week a year</p>
+            <p>Looking after children, running group activities and organising the day.</p>
+          </div>
         </li>
       </ol>
     </div>
+    <aside class="xp-side" aria-label="Languages and skills">
+      <div class="side-block rv">
+        <h3>Languages</h3>
+        <dl class="lang-list">
+          <div><dt>English</dt><dd>Native · C1 (Euroexam)</dd></div>
+          <div><dt>Hungarian</dt><dd>Native</dd></div>
+          <div><dt>German</dt><dd>B2</dd></div>
+        </dl>
+      </div>
+      <div class="side-block rv">
+        <h3>Skills</h3>
+        <ul class="chips"><li>Excel (intermediate)</li><li>Word &amp; PowerPoint</li><li>Accounting basics</li><li>SAP basics</li><li>Data analysis</li><li>AI productivity tools</li></ul>
+      </div>
+      <div class="side-block rv">
+        <h3>Strengths</h3>
+        <ul class="chips"><li>Analytical thinking</li><li>Structured work</li><li>Teamwork</li><li>Presenting</li><li>Reliability</li></ul>
+      </div>
+    </aside>
   </div>
 </section>
 
-<section class="h-work" id="work">
+<section class="contact section" id="contact">
   <div class="wrap">
-    <h2 class="h-h2 fade">What I do.</h2>
-    <div class="h-rows">
-      <a class="h-row fade" href="/finance/">
-        <span class="h-k">Finance</span>
-        <span class="h-d">Market research on how Austria’s banks compete for Gen Z. An Excel calculator that compares youth accounts. Forage programmes with JPMorgan and PNC.</span>
-        <span class="h-go">See my finance work</span>
-      </a>
-      <a class="h-row fade" href="/apps/">
-        <span class="h-k">Apps</span>
-        <span class="h-d">Four apps I designed and built: Deca, BW Buddy, Blank and QED.</span>
-        <span class="h-go">See my apps</span>
-      </a>
-      <a class="h-row fade" href="/business/">
-        <span class="h-k">Business</span>
-        <span class="h-d">Weekend Ink: custom temporary tattoos I design and sell at events. Clothes I sew and sell online.</span>
-        <span class="h-go">See my business</span>
-      </a>
-      <div class="h-row h-plain fade">
-        <span class="h-k">Also</span>
-        <span class="h-d">English tutoring for classmates. Research support at Global Green Group (2025). A summer job at Lipót Bad und Camping (2024). One week every summer volunteering at a children’s camp.</span>
-      </div>
-      <div class="h-row h-plain fade">
-        <span class="h-k">Skills</span>
-        <span class="h-d">Excel (intermediate), accounting basics, SAP basics, data analysis. English C1 (Euroexam), Hungarian, German B2.</span>
-      </div>
+    <div class="contact-card rv">
+      <span class="peek peek-c" aria-hidden="true"><img src="/img/mascot.webp" width="416" height="261" alt="" loading="lazy" decoding="async" /></span>
+      <h2>Let’s talk.</h2>
+      <p class="lead">I’m looking for a banking internship (Pflichtpraktikum). I’d love to hear from you.</p>
+      <div class="contact-actions" data-contact></div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="wrap">
-    <h2 class="fade">Let’s talk.</h2>
-    <p class="fade">I’m looking for a banking internship (Pflichtpraktikum). I’d love to hear from you.</p>
-    <div class="actions fade" id="contact-actions"></div>
-  </div>
-</section>
+</main>
 
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <span>Copyright © <span id="year">2026</span> Greta Grosz</span>
-    <span>gretagrosz.com</span>
+    <span class="me"><svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="30" fill="#232B3D"/><g transform="translate(16 16) scale(.68)" fill="none" stroke="#D9E0EA" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M36.48 21 A32 32 0 0 1 81.88 52.79 Q81 61 72 61 L46 61"/><path d="M63.52 79 A32 32 0 0 1 18.12 47.21 Q19 39 28 39 L54 39"/></g></svg>Greta Grosz</span>
+    <nav aria-label="Footer">
+      <a href="/finance/">Finance</a>
+      <a href="/apps/">Apps</a>
+      <a href="/cv/">CV</a>
+      <a href="https://www.linkedin.com/in/greta-grosz" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <span>© <span data-year>2026</span> · Made by Greta in Austria</span>
   </div>
 </footer>
 
-<script src="/i18n.js"></script>
-<script src="/site.js"></script>
-<script src="/home.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/i18n/home.js"></script>
+<script src="/js/home.js"></script>
+<script src="/js/site.js"></script>
 </body>
 </html>

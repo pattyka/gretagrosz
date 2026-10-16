@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "wrangler deploy"
+    "deploy": "sh scripts/sync-site.sh && wrangler deploy",
+    "site": "node scripts/serve.mjs 4321",
+    "sync": "sh scripts/sync-site.sh"
   },
   "dependencies": {
     "framer-motion": "^11.5.4",

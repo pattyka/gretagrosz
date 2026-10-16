@@ -1,0 +1,170 @@
+/* gretagrosz.com — shared foundation for every page.
+   Page styles live in their own file (home.css, apps.css, finance.css, cv.css) and never edit this one. */
+
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 400 900; font-display: swap; src: url(/fonts/nunito-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Nunito'; font-style: normal; font-weight: 400 900; font-display: swap; src: url(/fonts/nunito-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Caveat'; font-style: normal; font-weight: 500 700; font-display: swap; src: url(/fonts/caveat-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Caveat'; font-style: normal; font-weight: 500 700; font-display: swap; src: url(/fonts/caveat-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root {
+  /* Ink and surfaces: the site's blue-greys */
+  --ink: #232B3D;          /* headings, primary buttons */
+  --text: #34405A;         /* body copy */
+  --muted: #5B6782;        /* secondary copy (still AA on white and on --snow) */
+  --peri: #6F7E9C;         /* periwinkle: accents on text, icons */
+  --faint: #AEB9CB;        /* unlit words, disabled */
+  --mist: #D9E0EA;         /* the signature blue-grey */
+  --cloud: #E9EEF5;        /* tinted fills */
+  --snow: #F4F6FA;         /* soft section / card background */
+  --line: #E2E7EF;
+  --white: #FFFFFF;
+
+  /* The mascot's blues: the cute accent */
+  --sky: #8DB1E4;
+  --sky-soft: #DCE8F8;
+  --blue: #3D5E9C;         /* links, focus, the one saturated colour */
+
+  /* Signals */
+  --green: #34A867;
+  --green-soft: #DDF2E5;
+  --red: #E0605A;
+  --coral: #E8907A;        /* Blank's own colour, only near Blank */
+  --peach: #FBE7DF;
+
+  /* Type */
+  --font: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --hand: 'Caveat', 'Bradley Hand', cursive;
+  --t-hero: clamp(48px, 8.4vw, 116px);
+  --t-h1: clamp(40px, 6vw, 80px);
+  --t-h2: clamp(32px, 4.4vw, 56px);
+  --t-h3: clamp(22px, 2.2vw, 28px);
+  --t-lead: clamp(19px, 1.7vw, 23px);
+  --t-body: 17px;
+  --t-small: 14px;
+
+  /* Shape */
+  --r-xl: 36px;
+  --r-lg: 28px;
+  --r-md: 20px;
+  --r-sm: 14px;
+  --shadow-1: 0 1px 2px rgba(35, 43, 61, 0.06), 0 2px 8px rgba(35, 43, 61, 0.04);
+  --shadow-2: 0 1px 2px rgba(35, 43, 61, 0.06), 0 18px 40px -18px rgba(35, 43, 61, 0.28);
+  --shadow-3: 0 2px 4px rgba(35, 43, 61, 0.06), 0 30px 60px -24px rgba(35, 43, 61, 0.36);
+
+  /* Motion */
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* a little overshoot */
+  --out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Layout */
+  --wrap: 1120px;
+  --gutter: clamp(20px, 4vw, 40px);
+  --nav-h: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--nav-h) + 16px); }
+html.i18n-wait body { visibility: hidden; }
+body {
+  margin: 0; background: var(--white); color: var(--text);
+  font-family: var(--font); font-size: var(--t-body); line-height: 1.5; letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: clip;
+  text-rendering: optimizeLegibility;
+}
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+h1, h2, h3, h4 { margin: 0; color: var(--ink); font-weight: 800; letter-spacing: -0.035em; line-height: 1.04; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+:lang(de) { hyphens: auto; -webkit-hyphens: auto; }
+:lang(de) h1, :lang(de) h2, :lang(de) h3 { hyphens: manual; -webkit-hyphens: manual; }
+::selection { background: var(--sky-soft); color: var(--ink); }
+:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 8px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.section { padding: clamp(88px, 12vw, 160px) 0; }
+.snow { background: var(--snow); }
+
+/* Small type pieces every page uses */
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 800; letter-spacing: -0.005em; color: var(--peri); }
+.lead { font-size: var(--t-lead); line-height: 1.42; font-weight: 600; color: var(--muted); letter-spacing: -0.02em; }
+.hand { font-family: var(--hand); font-weight: 600; letter-spacing: 0; }
+
+/* Status pill: the green "open to work" dot */
+.status { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px 9px 13px; border-radius: 999px; background: var(--green-soft); color: #1F6B41; font-size: 15px; font-weight: 800; letter-spacing: -0.01em; }
+.status::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(52, 168, 103, 0.5); animation: status-pulse 2.4s ease-out infinite; }
+@keyframes status-pulse { 0% { box-shadow: 0 0 0 0 rgba(52, 168, 103, 0.45); } 70%, 100% { box-shadow: 0 0 0 9px rgba(52, 168, 103, 0); } }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 24px; border: 0; border-radius: 999px; background: var(--ink); color: #fff; font-size: 17px; font-weight: 800; letter-spacing: -0.015em; cursor: pointer; transition: transform 0.4s var(--spring), background 0.2s, box-shadow 0.3s; box-shadow: 0 8px 20px -10px rgba(35, 43, 61, 0.6); -webkit-tap-highlight-color: transparent; }
+.btn:hover { transform: translateY(-2px) scale(1.02); }
+.btn:active { transform: scale(0.96); transition-duration: 0.12s; }
+.btn.soft { background: var(--cloud); color: var(--ink); box-shadow: none; }
+.btn.soft:hover { background: var(--mist); }
+.btn.small { min-height: 40px; padding: 0 18px; font-size: 15px; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.link { display: inline-flex; align-items: center; gap: 4px; font-weight: 800; color: var(--blue); }
+.link::after { content: '›'; font-size: 1.15em; line-height: 1; transition: transform 0.35s var(--spring); }
+.link:hover::after { transform: translateX(3px); }
+
+/* Cards */
+.card { background: var(--white); border-radius: var(--r-lg); box-shadow: var(--shadow-2); }
+.card.soft { background: var(--snow); box-shadow: none; }
+
+/* App icon: real PNG inside a squircle-ish mask with a hairline */
+.app-icon { --s: 56px; display: block; width: var(--s); height: var(--s); flex: none; border-radius: 23%; overflow: hidden; box-shadow: 0 0 0 1px rgba(35, 43, 61, 0.06), 0 6px 14px -6px rgba(35, 43, 61, 0.35); background: var(--snow); }
+.app-icon img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Navigation: a floating glass pill ---------- */
+.nav { position: fixed; z-index: 50; top: 12px; left: 50%; transform: translateX(-50%); width: min(calc(100% - 24px), 760px); height: 52px; display: flex; align-items: center; gap: 4px; padding: 0 6px 0 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.72); -webkit-backdrop-filter: saturate(180%) blur(22px); backdrop-filter: saturate(180%) blur(22px); box-shadow: 0 0 0 1px rgba(35, 43, 61, 0.07), 0 10px 30px -14px rgba(35, 43, 61, 0.35); transition: box-shadow 0.3s, background 0.3s; }
+.nav .me { display: inline-flex; align-items: center; gap: 9px; height: 40px; padding: 0 12px 0 6px; border-radius: 999px; font-size: 17px; font-weight: 900; letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
+.nav .me .logo { width: 28px; height: 28px; transition: transform 0.6s var(--spring); }
+.nav .me:hover .logo { transform: rotate(-180deg); }
+.nav .links { display: flex; gap: 2px; margin: 0 auto; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; height: 38px; padding: 0 15px; border-radius: 999px; font-size: 15px; font-weight: 800; color: var(--muted); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+.nav .links a:hover { color: var(--ink); background: rgba(35, 43, 61, 0.05); }
+.nav .links a[aria-current='page'] { color: var(--ink); background: var(--cloud); }
+.lang { display: inline-flex; padding: 3px; border-radius: 999px; background: var(--cloud); flex: none; }
+.lang button { height: 32px; min-width: 38px; padding: 0 10px; border: 0; border-radius: 999px; background: none; font-size: 13px; font-weight: 900; letter-spacing: 0.02em; color: var(--muted); cursor: pointer; transition: background 0.25s, color 0.25s, box-shadow 0.25s; }
+.lang button[aria-pressed='true'] { background: var(--white); color: var(--ink); box-shadow: 0 1px 3px rgba(35, 43, 61, 0.16); }
+@media (max-width: 640px) {
+  .nav { height: 50px; padding: 0 5px 0 6px; }
+  .nav .me .name { display: none; }
+  .nav .me { padding: 0 6px; }
+  .nav .links { margin: 0 auto 0 0; }
+  .nav .links a { padding: 0 11px; font-size: 14px; }
+  .lang button { min-width: 34px; padding: 0 8px; }
+}
+@media (max-width: 360px) { .nav .links a { padding: 0 8px; } }
+
+/* ---------- Footer ---------- */
+.foot { padding: 56px 0 calc(40px + env(safe-area-inset-bottom)); background: var(--snow); color: var(--muted); font-size: 15px; font-weight: 700; }
+.foot .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; }
+.foot .me { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 900; font-size: 17px; letter-spacing: -0.03em; }
+.foot .me .logo { width: 26px; height: 26px; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.foot nav a:hover { color: var(--ink); }
+
+/* ---------- Reveal on scroll (only when JS runs, so nothing is ever hidden without it) ---------- */
+html.js .rv { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.9s var(--out); transition-delay: calc(var(--d, 0) * 80ms); }
+html.js .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .rv { opacity: 1; transform: none; transition: none; }
+  .status::before { animation: none; }
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
+
+/* Screen-reader-only text */
+.sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- Print: the CV page brings its own print rules; every other page prints plainly ---------- */
+@media print {
+  .nav, .foot, .no-print { display: none !important; }
+  html.js .rv { opacity: 1 !important; transform: none !important; }
+  body { color: #000; }
+}
+@media (max-width: 640px) { .nav .links .home-link { display: none; } }
+
+/* ---------- Scene: the box every app demo animation lives in (scenes/<name>.js mounts into it) ----------
+   Fixed 5:4 at every width, so scenes lay out in cqw/cqh and never measure. Scenes style their own inside. */
+.scene { position: relative; width: 100%; aspect-ratio: 5 / 4; container-type: size; border-radius: var(--r-xl); overflow: hidden; background: var(--snow); isolation: isolate; -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; }
+.scene.scene-failed { background: var(--cloud); }

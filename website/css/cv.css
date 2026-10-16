@@ -1,0 +1,113 @@
+/* CV page: the CV as one A4 sheet on the blue-grey desk. The same sheet is what ⌘P prints and what
+   scripts/make-cv-pdf.mjs turns into /files/Greta_Grosz_CV_{EN,DE}.pdf.
+
+   Every size inside the paper is written in --u, one 794th of the paper's width (A4 at 96 dpi = 794 px),
+   so the sheet keeps its exact layout at any width, from a 390 px phone to print (where 1 --u = 1 px at
+   96 dpi = 0.2646 mm). The text is real text at every scale, so pinch-zoom stays sharp.
+   The sheet uses Nunito explicitly, not the system rounded face: the same metrics in Safari, Chrome and the
+   PDF is what guarantees "exactly one page" in both languages, and Nunito's licence allows embedding. */
+
+.cv-stage { background: var(--mist); padding: calc(var(--nav-h) + 44px) var(--gutter) clamp(64px, 9vw, 120px); }
+.cv-wrap { --u: calc(100cqw / 794); width: min(840px, 100%); margin: 0 auto; container-type: inline-size; }
+
+/* Buttons above the paper */
+.cv-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: clamp(18px, 3vw, 26px); }
+.cv-bar .btn.soft { background: var(--white); }
+.cv-bar .btn.soft:hover { background: var(--snow); }
+
+/* The paper */
+.cv-paper { position: relative; }
+.sheet {
+  position: relative; z-index: 1; display: grid; grid-template-columns: calc(238 * var(--u)) 1fr;
+  width: 100%; aspect-ratio: 210 / 297; overflow: hidden;
+  background: var(--white); color: var(--text); border-radius: calc(6 * var(--u));
+  box-shadow: 0 1px 2px rgba(35, 43, 61, 0.08), 0 calc(30 * var(--u)) calc(70 * var(--u)) calc(-30 * var(--u)) rgba(35, 43, 61, 0.38);
+  font-family: 'Nunito', system-ui, sans-serif; font-size: calc(11.6 * var(--u)); line-height: 1.45; letter-spacing: 0;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+.sheet h1, .sheet h2, .sheet h3 { letter-spacing: 0; line-height: 1.2; text-wrap: balance; }
+.sheet p, .sheet li { text-wrap: pretty; }
+.sheet ul, .sheet ol, .sheet dl, .sheet dd { list-style: none; margin: 0; padding: 0; }
+.sheet a { color: var(--blue); font-weight: 700; }
+.sheet a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
+
+/* The mascot peeking over the top edge, paws on the paper */
+.cv-peek { position: absolute; z-index: 2; right: calc(54 * var(--u)); bottom: calc(100% - 7 * var(--u)); width: calc(150 * var(--u)); aspect-ratio: 520 / 326; overflow: hidden; pointer-events: none; }
+.cv-peek img { width: 100%; height: 100%; transform-origin: 50% 100%; }
+html.js .cv-peek img { transform: translateY(105%); transition: transform 0.9s var(--spring) 0.45s; }
+html.js .cv-paper.in .cv-peek img { transform: none; }
+html.js .cv-peek.hop img { animation: cv-hop 0.7s var(--spring); }
+@keyframes cv-hop { 0%, 100% { transform: none; } 35% { transform: translateY(-9%) scale(1.03, 0.97); } 60% { transform: translateY(3%) scale(0.98, 1.02); } }
+
+/* ---------- Sidebar ---------- */
+.side { display: flex; flex-direction: column; gap: calc(26 * var(--u)); padding: calc(40 * var(--u)) calc(26 * var(--u)) calc(36 * var(--u)) calc(30 * var(--u)); background: var(--snow); }
+.photo { aspect-ratio: 4 / 5; overflow: hidden; border-radius: calc(10 * var(--u)); background: var(--cloud); }
+.photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.32); transform-origin: 50% 8%; }
+.sheet h2 { display: flex; align-items: center; gap: calc(10 * var(--u)); margin: 0 0 calc(10 * var(--u)); font-size: calc(10.4 * var(--u)); font-weight: 900; letter-spacing: 0.045em; text-transform: uppercase; color: var(--blue); }
+.facts { display: grid; gap: calc(7 * var(--u)); }
+.facts dt { font-size: calc(9.6 * var(--u)); font-weight: 800; color: var(--muted); line-height: 1.3; }
+.facts dd { color: var(--ink); font-weight: 700; overflow-wrap: anywhere; }
+.langs { display: grid; gap: calc(7 * var(--u)); }
+.langs li { display: flex; flex-direction: column; }
+.langs .l { color: var(--ink); font-weight: 800; }
+.langs .v { color: var(--muted); font-weight: 700; font-size: calc(10.6 * var(--u)); }
+.list { display: grid; gap: calc(4 * var(--u)); }
+.list li { position: relative; padding-left: calc(13 * var(--u)); color: var(--ink); font-weight: 650; }
+.list li::before { content: ''; position: absolute; left: 0; top: 0.58em; width: calc(5 * var(--u)); height: calc(5 * var(--u)); border-radius: 50%; background: var(--sky); }
+
+/* QR code to the site, for the printed copy: sits at the foot of the sidebar */
+.sheet .qr { display: flex; align-items: center; gap: calc(12 * var(--u)); margin-top: auto; color: var(--ink); }
+.qr svg { flex: none; width: calc(66 * var(--u)); height: calc(66 * var(--u)); padding: calc(6 * var(--u)); border-radius: calc(8 * var(--u)); background: var(--white); box-shadow: 0 0 0 1px var(--line); box-sizing: content-box; }
+.qr span { font-size: calc(10.6 * var(--u)); font-weight: 800; color: var(--ink); }
+.sheet a.qr:hover { text-decoration: none; }
+
+/* ---------- Main column ---------- */
+.body { padding: calc(40 * var(--u)) calc(40 * var(--u)) calc(30 * var(--u)) calc(36 * var(--u)); display: flex; flex-direction: column; gap: calc(22 * var(--u)); min-width: 0; }
+.kicker { font-size: calc(10.4 * var(--u)); font-weight: 900; letter-spacing: 0.045em; text-transform: uppercase; color: var(--peri); }
+.sheet h1 { margin: calc(4 * var(--u)) 0 calc(6 * var(--u)); font-size: calc(40 * var(--u)); font-weight: 900; letter-spacing: -0.025em; line-height: 1; color: var(--ink); }
+.role { font-size: calc(15 * var(--u)); font-weight: 800; color: var(--ink); line-height: 1.3; }
+.seek { display: inline-flex; align-items: center; gap: calc(7 * var(--u)); margin-top: calc(10 * var(--u)); padding: calc(4 * var(--u)) calc(11 * var(--u)) calc(4 * var(--u)) calc(9 * var(--u)); border-radius: 999px; background: var(--green-soft); color: #1F6B41; font-size: calc(11 * var(--u)); font-weight: 800; line-height: 1.35; }
+.seek::before { content: ''; flex: none; width: calc(7 * var(--u)); height: calc(7 * var(--u)); border-radius: 50%; background: var(--green); }
+.profile { margin-top: calc(14 * var(--u)); color: var(--text); font-weight: 600; }
+
+.sec h2::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.rows { display: grid; gap: calc(11 * var(--u)); }
+.rows > li { display: grid; grid-template-columns: calc(80 * var(--u)) 1fr; gap: calc(14 * var(--u)); }
+.when { padding-top: calc(1.5 * var(--u)); font-size: calc(10.4 * var(--u)); font-weight: 800; color: var(--muted); line-height: 1.4; font-variant-numeric: tabular-nums; }
+.sheet h3 { font-size: calc(12.8 * var(--u)); font-weight: 800; color: var(--ink); line-height: 1.3; }
+.at { font-weight: 700; color: var(--peri); }
+.rows p:not(.at) { color: var(--text); }
+.rows .url { margin-top: calc(2 * var(--u)); }
+.sub { display: grid; gap: calc(2 * var(--u)); margin-top: calc(3 * var(--u)) !important; }
+.sub b { color: var(--ink); font-weight: 800; }
+
+/* German runs longer and hyphenates in the narrow columns */
+/* No automatic hyphenation on the sheet: whole words keep the PDF clean for applicant-tracking text extraction */
+.sheet, .sheet * { hyphens: manual; -webkit-hyphens: manual; }
+
+/* Narrow screens: the buttons fill the row, so the mascot gets its own strip between them and the paper */
+@media (max-width: 720px) {
+  .cv-bar { margin-bottom: calc(94 * var(--u) + 2px); }
+}
+@media (max-width: 640px) {
+  .cv-stage { padding-top: calc(var(--nav-h) + 28px); padding-left: 14px; padding-right: 14px; }
+  .cv-bar .btn { min-height: 44px; padding: 0 18px; font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .cv-peek img { transform: none; transition: none; }
+  html.js .cv-peek.hop img { animation: none; }
+}
+
+/* ---------- Print: just the sheet, edge to edge on one A4 page ---------- */
+@page { size: A4; margin: 0; }
+@media print {
+  html, body { margin: 0; padding: 0; background: #fff; }
+  body > *:not(main) { display: none !important; }
+  .cv-stage { padding: 0; background: none; }
+  .cv-wrap { width: 210mm; margin: 0; }
+  .cv-bar, .cv-peek { display: none !important; }
+  .cv-paper { width: 210mm; transform: none !important; opacity: 1 !important; }
+  .sheet { width: 210mm; height: 296.9mm; aspect-ratio: auto; border-radius: 0; box-shadow: none; break-inside: avoid; }
+  .sheet a:hover { text-decoration: none; }
+}
