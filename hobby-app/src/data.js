@@ -58,7 +58,7 @@ export const IDEAS = [
 
 export const COST_LABEL = { free: 'Costs nothing', cheap: 'Under €20', some: 'Needs some gear' }
 
-export const AVATAR_COLORS = ['#ECEBFC', '#FCE7F3', '#EDE9FE', '#DBEAFE', '#D1FAE5', '#FEF3C7', '#FFEDD5', '#E5E7EB']
+export const AVATAR_COLORS = ['#FEE9E5', '#FCE7F3', '#EDE9FE', '#DBEAFE', '#D1FAE5', '#FEF3C7', '#FFEDD5', '#E5E7EB']
 
 export const uid = (prefix = 'id') => `${prefix}_${Math.random().toString(36).slice(2, 9)}`
 

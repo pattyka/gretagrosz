@@ -44,7 +44,7 @@ export function Icon({ name, className = 'h-5 w-5', filled = false }) {
 export function Logo() {
   return (
     <span className="flex items-center gap-2">
-      <span className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-spark text-lg font-extrabold leading-none text-white">b</span>
+      <img src={`${import.meta.env.BASE_URL}logo.png`} alt="" className="h-8 w-8" />
       <span className="hidden text-xl font-extrabold tracking-tight sm:inline">blank</span>
     </span>
   )
@@ -254,7 +254,7 @@ export function ResourceList({ resources, className = 'bg-card' }) {
 }
 
 // A short burst of confetti, e.g. when a step is ticked off
-const CONFETTI_COLORS = ['#5B4BDB', '#F59E0B', '#10B981', '#EC4899', '#3B82F6']
+const CONFETTI_COLORS = ['#F4644F', '#F59E0B', '#10B981', '#EC4899', '#3B82F6']
 export function Confetti() {
   const pieces = Array.from({ length: 28 }, (_, i) => ({
     left: `${(i * 37) % 100}%`,

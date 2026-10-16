@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { LANGUAGES, useLang } from '../i18n.jsx'
-import { ACCENTS, useAccent } from '../accent.jsx'
 import { jahrgaenge } from '../data/curriculum.js'
 import { useProgress } from '../progress.jsx'
 import BubbleButton from '../components/BubbleButton.jsx'
@@ -15,15 +14,14 @@ function Check() {
   )
 }
 
-// Ersteinrichtung beim allerersten Öffnen: Jahrgang → Sprache → Farbe.
+// Ersteinrichtung beim allerersten Öffnen: Jahrgang → Sprache.
 export default function Onboarding() {
   const { lang, setLang, t } = useLang()
-  const { accent, setAccent } = useAccent()
   const { myYear, setMyYear, finishOnboarding } = useProgress()
   const [step, setStep] = useState(0)
-  const last = step === 2
+  const last = step === 1
 
-  const titles = [t('obYear'), t('obLang'), t('obColor')]
+  const titles = [t('obYear'), t('obLang')]
 
   return (
     <div className="mx-auto flex min-h-screen max-w-md flex-col px-4 pb-8 pt-10">
@@ -32,7 +30,7 @@ export default function Onboarding() {
 
       {/* Fortschrittspunkte */}
       <div className="mb-6 mt-3 flex justify-center gap-2" aria-hidden>
-        {[0, 1, 2].map((i) => (
+        {[0, 1].map((i) => (
           <span key={i} className={`h-2 w-2 rounded-full ${i === step ? 'bg-accent-ink' : 'bg-black/15'}`} />
         ))}
       </div>
@@ -57,20 +55,6 @@ export default function Onboarding() {
           <ListGroup>
             {LANGUAGES.map((l) => (
               <ListRow key={l.code} title={l.label} chevron={false} onClick={() => setLang(l.code)} right={l.code === lang ? <Check /> : null} />
-            ))}
-          </ListGroup>
-        )}
-        {step === 2 && (
-          <ListGroup>
-            {ACCENTS.map((a) => (
-              <ListRow
-                key={a.id}
-                title={a.names[lang] ?? a.names.de}
-                chevron={false}
-                onClick={() => setAccent(a.id)}
-                left={<span className="h-7 w-7 shrink-0 rounded-full ring-1 ring-black/10" style={{ backgroundColor: a.swatch }} />}
-                right={a.id === accent ? <Check /> : null}
-              />
             ))}
           </ListGroup>
         )}

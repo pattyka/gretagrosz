@@ -11,7 +11,7 @@ export function seed() {
   const ago = (d) => now - d
 
   const users = [
-    { id: ME, name: 'You', handle: 'you', color: '#ECEBFC', photo: null, prefs: null, bio: 'Just getting started — trying new things!', passions: ['Music', 'Cooking'] },
+    { id: ME, name: 'You', handle: 'you', color: '#FEE9E5', photo: null, prefs: null, bio: 'Just getting started — trying new things!', passions: ['Music', 'Cooking'] },
     { id: 'u_maya', name: 'Maya Lin', handle: 'maya.makes', color: '#FCE7F3', photo: null, bio: 'Knitting my way through winter. Beginner at everything, proud of it.', passions: ['Crafts', 'Gardening'] },
     { id: 'u_leo', name: 'Leo Okafor', handle: 'leo.builds', color: '#DBEAFE', photo: null, bio: 'Weekend woodworker & tinkerer. Currently: a canoe.', passions: ['Woodwork', 'Outdoors'] },
     { id: 'u_sofia', name: 'Sofia Reyes', handle: 'sofi.sketch', color: '#FEF3C7', photo: null, bio: 'One sketch a day since January.', passions: ['Art', 'Photography'] },

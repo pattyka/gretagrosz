@@ -122,8 +122,8 @@ function load() {
     const raw = localStorage.getItem(KEY)
     if (raw) {
       const data = upgrade(JSON.parse(raw))
-      // The app colour changed from red to indigo: update the default avatar colour to match
-      data.users = data.users.map((u) => (u.id === ME && u.color === '#FDE8E5' ? { ...u, color: '#ECEBFC' } : u))
+      // The app colour changed to coral: update the default avatar colour to match
+      data.users = data.users.map((u) => (u.id === ME && ['#FDE8E5', '#ECEBFC'].includes(u.color) ? { ...u, color: '#FEE9E5' } : u))
       // Unfinished projects are always private
       data.projects = data.projects.map((p) => (p.status === 'done' ? p : { ...p, visibility: 'private' }))
       return data

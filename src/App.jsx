@@ -3,7 +3,7 @@ import Home from './pages/Home.jsx'
 import Quiz from './pages/Quiz.jsx'
 import LernInhalt from './pages/LernInhalt.jsx'
 import TabBar from './components/TabBar.jsx'
-import Einstellungen, { FarbWahl, JahrgangWahl, SprachWahl } from './pages/Einstellungen.jsx'
+import Einstellungen, { JahrgangWahl, SprachWahl } from './pages/Einstellungen.jsx'
 import LevelUpToast from './components/LevelUpToast.jsx'
 import { KartenDeck } from './pages/Karten.jsx'
 import Testmodus from './pages/Testmodus.jsx'
@@ -50,7 +50,6 @@ export default function App() {
         <Route path="/einstellungen" element={<Einstellungen />} />
         <Route path="/einstellungen/jahrgang" element={<JahrgangWahl />} />
         <Route path="/einstellungen/sprache" element={<SprachWahl />} />
-        <Route path="/einstellungen/farbe" element={<FarbWahl />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <TabBar />

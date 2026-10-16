@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { LANGUAGES, useLang } from '../i18n.jsx'
-import { ACCENTS, useAccent } from '../accent.jsx'
 import { jahrgaenge } from '../data/curriculum.js'
 import { useProgress } from '../progress.jsx'
 import Page from '../components/Page.jsx'
@@ -14,18 +13,12 @@ function Check() {
   )
 }
 
-function Swatch({ color, size = 'h-7 w-7' }) {
-  return <span className={`${size} inline-block shrink-0 rounded-full ring-1 ring-black/10`} style={{ backgroundColor: color }} />
-}
-
-// Einstellungen (Übersicht): je eine Zeile für Jahrgang, Sprache und Farbe mit der aktuellen Auswahl.
+// Einstellungen (Übersicht): je eine Zeile für Jahrgang und Sprache mit der aktuellen Auswahl.
 export default function Einstellungen() {
   const navigate = useNavigate()
   const { lang, t } = useLang()
-  const { accent } = useAccent()
   const { myYear } = useProgress()
   const currentLang = LANGUAGES.find((l) => l.code === lang)
-  const currentAccent = ACCENTS.find((a) => a.id === accent) ?? ACCENTS[0]
 
   return (
     <Page title={t('settings')}>
@@ -36,16 +29,6 @@ export default function Einstellungen() {
           onClick={() => navigate('/einstellungen/jahrgang')}
         />
         <ListRow title={t('language')} right={currentLang?.label} onClick={() => navigate('/einstellungen/sprache')} />
-        <ListRow
-          title={t('colorTheme')}
-          right={
-            <span className="flex items-center gap-2">
-              {currentAccent.names[lang] ?? currentAccent.names.de}
-              <Swatch color={currentAccent.swatch} size="h-5 w-5" />
-            </span>
-          }
-          onClick={() => navigate('/einstellungen/farbe')}
-        />
       </ListGroup>
 
       <ListGroup footer={t('testModeFooter')}>
@@ -100,24 +83,3 @@ export function SprachWahl() {
   )
 }
 
-// /einstellungen/farbe
-export function FarbWahl() {
-  const { lang, t } = useLang()
-  const { accent, setAccent } = useAccent()
-  return (
-    <Page title={t('colorTheme')} back="/einstellungen">
-      <ListGroup footer={t('colorFooter')}>
-        {ACCENTS.map((a) => (
-          <ListRow
-            key={a.id}
-            title={a.names[lang] ?? a.names.de}
-            chevron={false}
-            onClick={() => setAccent(a.id)}
-            left={<Swatch color={a.swatch} />}
-            right={a.id === accent ? <Check /> : null}
-          />
-        ))}
-      </ListGroup>
-    </Page>
-  )
-}
