@@ -1,0 +1,13 @@
+// Cloudflare deploy for gretagrosz.com: one Worker serving deploy/site/
+// (homepage at /, apps at /bwbuddy/ /blank/ /tenaday/ /regional/).
+// Settings copied from the dashboard upload. Deploy with: npm run deploy
+{
+  "name": "gretagrosz-apps",
+  "compatibility_date": "2026-10-15",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./deploy/site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
