@@ -38,7 +38,7 @@ export default function LevelUpToast() {
             }}
             className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-blob bg-accent p-4 text-left text-accent-on shadow-bubble"
           >
-            <ShopScene level={levelUp} className="h-14 w-20 shrink-0" />
+            <ShopScene level={levelUp} still className="h-14 w-20 shrink-0" />
             <span>
               <span className="block text-lg font-bold">
                 {t('levelUp')} {levelText(level, lang).name}

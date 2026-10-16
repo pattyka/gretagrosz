@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { levelOf, levelText } from '../data/shop.js'
@@ -6,6 +6,7 @@ import { useLang } from '../i18n.jsx'
 import { XP, currentStreak, useProgress } from '../progress.jsx'
 import Page from '../components/Page.jsx'
 import ShopScene from '../components/ShopScene.jsx'
+import ShopTimeline from '../components/ShopTimeline.jsx'
 import BubbleButton from '../components/BubbleButton.jsx'
 import { ListGroup, ListRow } from '../components/List.jsx'
 import { getJahrgang, getKapitel, getKapitelTopics, getTopic } from '../data/curriculum.js'
@@ -27,9 +28,19 @@ export default function Home() {
     .filter((r) => r.topic)
   const hasExam = exams.some((e) => daysUntil(e.date) >= 0)
 
+  const shown = useShownLevel(index)
+  const [history, setHistory] = useState(false)
+
   return (
     <Page title={t('shopTitle')} center>
-      <ShopScene level={index} background={false} className="mx-auto mb-4 h-auto w-full max-w-md" />
+      <button
+        onClick={() => setHistory(true)}
+        aria-label={t('historyTitle')}
+        className="mx-auto mb-4 block w-full max-w-md transition-transform active:scale-[0.98]"
+      >
+        <ShopScene level={shown} className="h-auto w-full" />
+      </button>
+      <ShopTimeline open={history} current={index} onClose={() => setHistory(false)} />
 
       <LevelCard />
       <TodayCard />
@@ -59,6 +70,37 @@ export default function Home() {
       )}
     </Page>
   )
+}
+
+// Zuletzt auf der Startseite gezeigte Stufe. Ist der Laden seither gewachsen, steht zuerst
+// die alte Stufe da und kurz danach baut sich das Neue sichtbar auf.
+const SEEN_KEY = 'bw-buddy-shop-seen'
+
+function useShownLevel(index) {
+  const [shown, setShown] = useState(() => {
+    try {
+      const raw = localStorage.getItem(SEEN_KEY)
+      const seen = raw === null ? 0 : Number(raw)
+      return Number.isInteger(seen) && seen >= 0 && seen < index ? seen : index
+    } catch {
+      return index
+    }
+  })
+
+  useEffect(() => {
+    if (shown < index) {
+      const timer = setTimeout(() => setShown(index), 450)
+      return () => clearTimeout(timer)
+    }
+    if (shown > index) setShown(index)
+    try {
+      localStorage.setItem(SEEN_KEY, String(index))
+    } catch {
+      /* ignorieren */
+    }
+  }, [shown, index])
+
+  return Math.min(shown, index)
 }
 
 // Level von Loopys Laden mit XP-Balken; die XP-Regeln stehen hinter dem kleinen "i".

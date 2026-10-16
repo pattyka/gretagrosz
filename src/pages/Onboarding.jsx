@@ -25,7 +25,7 @@ export default function Onboarding() {
 
   return (
     <div className="mx-auto flex min-h-screen max-w-md flex-col px-4 pb-8 pt-10">
-      <ShopScene level={0} background={false} className="mx-auto mb-2 h-auto w-48" />
+      <ShopScene level={0} className="mx-auto mb-2 h-auto w-56" />
       <h1 className="mb-1 text-center text-[28px] font-bold leading-tight tracking-tight text-title">{t('shopTitle')}</h1>
 
       {/* Fortschrittspunkte */}
