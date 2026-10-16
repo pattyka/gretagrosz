@@ -3,16 +3,16 @@
 // Die Insel ist immer quadratisch [a, b] × [a, b] und wächst mit der Stufe; die Kamera rahmt sie ein.
 
 // island: [a, b] · frame: sichtbarer Inhalt der fertigen Szene in px [links, oben, rechts, unten]
-// (mit getBBox gemessen, inkl. Inselschatten; nach größeren Änderungen an der Zeichnung neu messen)
+// (mit getBBox gemessen; nach größeren Änderungen an der Zeichnung neu messen)
 export const STAGES = [
-  { island: [3.4, 8.6], frame: [-104, 51, 104, 205] }, // 0 Marktstand
-  { island: [2.8, 9.2], frame: [-128, 13, 128, 218] }, // 1 eigener Laden
-  { island: [2.8, 9.2], frame: [-128, 13, 128, 218] }, // 2 Schaufenster
-  { island: [2.4, 10.6], frame: [-164, 13, 164, 248] }, // 3 Café-Ecke
-  { island: [0.8, 11.2], frame: [-208, 1, 208, 262] }, // 4 Bonbonküche
-  { island: [0, 12], frame: [-250, -16, 250, 279] }, // 5 Online-Shop & Lieferwagen
-  { island: [0, 12], frame: [-250, -16, 250, 279] }, // 6 zweite Filiale
-  { island: [0, 12], frame: [-250, -114, 250, 279] }, // 7 Candy-Imperium
+  { island: [3.4, 8.6], frame: [-104, 51, 104, 194] }, // 0 Marktstand
+  { island: [2.8, 9.2], frame: [-128, 13, 128, 206] }, // 1 eigener Laden
+  { island: [2.8, 9.2], frame: [-128, 13, 128, 206] }, // 2 Schaufenster
+  { island: [2.4, 10.6], frame: [-164, 13, 164, 234] }, // 3 Café-Ecke
+  { island: [0.8, 11.2], frame: [-208, 1, 208, 246] }, // 4 Bonbonküche
+  { island: [0, 12], frame: [-250, -16, 250, 262] }, // 5 Online-Shop & Lieferwagen
+  { island: [0, 12], frame: [-250, -16, 250, 262] }, // 6 zweite Filiale
+  { island: [0, 12], frame: [-250, -114, 250, 262] }, // 7 Candy-Imperium
 ]
 
 // Grundflächen. Fassaden (Tür, Schaufenster) liegen immer auf der linken Vorderseite (+y).

@@ -195,14 +195,6 @@ function Slab({ stage }) {
   const shape = useTransform([av, bv], ([a0, b0]) => roundRect(a0, a0, b0 - a0, b0 - a0, R))
   const body = useTransform([av, bv], ([a0, b0]) => hull(a0, a0, b0 - a0, b0 - a0, R, 0, T))
   const lip = useTransform([av, bv], ([a0, b0]) => hull(a0, a0, b0 - a0, b0 - a0, R, 0, L))
-  // Schatten auf der Karte: flache Ellipse knapp unter der Inselspitze
-  const shadow = useTransform([av, bv], ([a0, b0]) => {
-    const rx = (b0 - a0) * K * 0.5
-    const ry = rx * 0.09
-    const cy = b0 * K + T + 7
-    return `M${-rx} ${cy}A${rx} ${ry} 0 1 0 ${rx} ${cy}A${rx} ${ry} 0 1 0 ${-rx} ${cy}Z`
-  })
-
   const sides = (hpx, quad) => (
     <>
       <motion.path d={shape} transform={`translate(0 ${hpx}) ${topMatrix(0, 0, 0)}`} />
@@ -212,7 +204,6 @@ function Slab({ stage }) {
 
   return (
     <g>
-      <motion.path d={shadow} fill={C.shadow} opacity="0.25" />
       <clipPath id={`isl-r-${uid}`}>
         <rect x="0" y="-4000" width="8000" height="8000" />
       </clipPath>
